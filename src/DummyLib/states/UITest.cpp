@@ -157,13 +157,13 @@ void UITest::UpdateAnim(const uint64_t dt_us) {
                 std::swap(as->matr_palette_curr, as->matr_palette_prev);
                 as->anim_time_s += delta_time_s;
 
-                Ren::MeshCold &mesh_cold = ren_ctx_->meshes().Get(dr->mesh).second;
+                Ren::MeshCold &mesh_cold = ren_ctx_->storages().meshes[dr->mesh].second;
                 Ren::Skeleton &skel = mesh_cold.skel;
 
                 const int anim_index = 0;
 
-                skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->anims());
-                skel.ApplyAnim(anim_index, ren_ctx_->anims());
+                skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->storages().anims);
+                skel.ApplyAnim(anim_index, ren_ctx_->storages().anims);
                 skel.UpdateBones(&as->matr_palette_curr[0]);
             }
         }

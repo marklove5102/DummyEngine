@@ -132,7 +132,7 @@ void LoadingState::Draw() {
         ren_ctx_->backend_frame();
 
     { // Solid black background
-        const auto &[reg_main, reg_cold] = ren_ctx_->image_regions().Get(dummy_white_);
+        const auto &[reg_main, reg_cold] = ren_ctx_->image_regions()[dummy_white_];
         const Gui::Vec2f pos[2] = {Gui::Vec2f{-1.0f, -1.0f}, Gui::Vec2f{1.0f, 1.0f}};
         const Gui::Vec2f uvs[2] = {Gui::Vec2f{float(reg_main.pos[0]), float(reg_main.pos[1])},
                                    Gui::Vec2f{float(reg_main.pos[0]), float(reg_main.pos[1])}};

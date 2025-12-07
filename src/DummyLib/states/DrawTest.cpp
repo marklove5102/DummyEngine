@@ -757,11 +757,11 @@ void DrawTest::TestUpdateAnims(const float delta_time_s) {
                 std::swap(as->matr_palette_curr, as->matr_palette_prev);
                 as->anim_time_s += delta_time_s;
 
-                MeshCold &mesh_cold = ren_ctx_->meshes().Get(dr->mesh).second;
+                MeshCold &mesh_cold = ren_ctx_->storages().meshes[dr->mesh].second;
                 Skeleton &skel = mesh_cold.skel;
 
-                skel.UpdateAnim(0, as->anim_time_s, ren_ctx_->anims());
-                skel.ApplyAnim(0, ren_ctx_->anims());
+                skel.UpdateAnim(0, as->anim_time_s, ren_ctx_->storages().anims);
+                skel.ApplyAnim(0, ren_ctx_->storages().anims);
                 skel.UpdateBones(&as->matr_palette_curr[0]);
 
                 {
@@ -796,13 +796,13 @@ void DrawTest::TestUpdateAnims(const float delta_time_s) {
                 std::swap(as->matr_palette_curr, as->matr_palette_prev);
                 as->anim_time_s += delta_time_s;
 
-                MeshCold &mesh_cold = ren_ctx_->meshes().Get(dr->mesh).second;
+                MeshCold &mesh_cold = ren_ctx_->storages().meshes[dr->mesh].second;
                 Skeleton &skel = mesh_cold.skel;
 
                 const int anim_index = (i < 8) ? 2 : 3;
 
-                skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->anims());
-                skel.ApplyAnim(anim_index, ren_ctx_->anims());
+                skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->storages().anims);
+                skel.ApplyAnim(anim_index, ren_ctx_->storages().anims);
                 skel.UpdateBones(&as->matr_palette_curr[0]);
             }
         }
@@ -825,13 +825,13 @@ void DrawTest::TestUpdateAnims(const float delta_time_s) {
             std::swap(as->matr_palette_curr, as->matr_palette_prev);
             as->anim_time_s += delta_time_s;
 
-            MeshCold &mesh_cold = ren_ctx_->meshes().Get(dr->mesh).second;
+            MeshCold &mesh_cold = ren_ctx_->storages().meshes[dr->mesh].second;
             Skeleton &skel = mesh_cold.skel;
 
             const int anim_index = 0;
 
-            skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->anims());
-            skel.ApplyAnim(anim_index, ren_ctx_->anims());
+            skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->storages().anims);
+            skel.ApplyAnim(anim_index, ren_ctx_->storages().anims);
             skel.UpdateBones(&as->matr_palette_curr[0]);
 
             sophia->change_mask |= Eng::CompDrawableBit;
@@ -855,13 +855,13 @@ void DrawTest::TestUpdateAnims(const float delta_time_s) {
             std::swap(as->matr_palette_curr, as->matr_palette_prev);
             as->anim_time_s += delta_time_s;
 
-            MeshCold &mesh_cold = ren_ctx_->meshes().Get(dr->mesh).second;
+            MeshCold &mesh_cold = ren_ctx_->storages().meshes[dr->mesh].second;
             Skeleton &skel = mesh_cold.skel;
 
             const int anim_index = 0;
 
-            skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->anims());
-            skel.ApplyAnim(anim_index, ren_ctx_->anims());
+            skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->storages().anims);
+            skel.ApplyAnim(anim_index, ren_ctx_->storages().anims);
             skel.UpdateBones(&as->matr_palette_curr[0]);
         }
     }
@@ -879,13 +879,13 @@ void DrawTest::TestUpdateAnims(const float delta_time_s) {
             std::swap(as->matr_palette_curr, as->matr_palette_prev);
             as->anim_time_s += delta_time_s;
 
-            MeshCold &mesh_cold = ren_ctx_->meshes().Get(dr->mesh).second;
+            MeshCold &mesh_cold = ren_ctx_->storages().meshes[dr->mesh].second;
             Skeleton &skel = mesh_cold.skel;
 
             const int anim_index = 0;
 
-            skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->anims());
-            skel.ApplyAnim(anim_index, ren_ctx_->anims());
+            skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->storages().anims);
+            skel.ApplyAnim(anim_index, ren_ctx_->storages().anims);
             skel.UpdateBones(&as->matr_palette_curr[0]);
         }
     }
@@ -903,13 +903,13 @@ void DrawTest::TestUpdateAnims(const float delta_time_s) {
             std::swap(as->matr_palette_curr, as->matr_palette_prev);
             as->anim_time_s += delta_time_s;
 
-            MeshCold &mesh_cold = ren_ctx_->meshes().Get(dr->mesh).second;
+            MeshCold &mesh_cold = ren_ctx_->storages().meshes[dr->mesh].second;
             Skeleton &skel = mesh_cold.skel;
 
             const int anim_index = 0;
 
-            skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->anims());
-            skel.ApplyAnim(anim_index, ren_ctx_->anims());
+            skel.UpdateAnim(anim_index, as->anim_time_s, ren_ctx_->storages().anims);
+            skel.ApplyAnim(anim_index, ren_ctx_->storages().anims);
             skel.UpdateBones(&as->matr_palette_curr[0]);
         }
     }

@@ -10,7 +10,7 @@
 #endif
 
 #include "_cs_common.glsl"
-#include "ssr_common.glsl"
+#include "rt_specular_common.glsl"
 #include "ssr_prefilter_interface.h"
 
 #pragma multi_compile _ RELAXED

@@ -10,7 +10,7 @@
 #endif
 
 #include "_cs_common.glsl"
-#include "gi_common.glsl"
+#include "rt_diffuse_common.glsl"
 #include "gi_prefilter_interface.h"
 
 #pragma multi_compile _ RELAXED
