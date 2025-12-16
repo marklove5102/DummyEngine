@@ -42,7 +42,7 @@ class LoadingState : public Eng::ViewerState {
 
     Ren::ImageRegionRef dummy_white_;
 
-    Ren::ProgramRef blit_loading_prog_;
+    Ren::ProgramHandle blit_loading_prog_;
     Ren::RastState curr_rast_state_;
 
     Eng::FrameInfo fr_info_;

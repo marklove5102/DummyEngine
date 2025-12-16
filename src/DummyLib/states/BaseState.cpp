@@ -133,62 +133,87 @@ BaseState::BaseState(Viewer *viewer) : viewer_(viewer) {
     //
     // Create required staging buffers
     //
-    Ren::BufRef instance_indices_stage_buf = ren_ctx_->LoadBuffer(
+    const Ren::BufferHandle instance_indices_stage_buf = ren_ctx_->FindOrCreateBuffer(
         "Instance Indices (Upload)", Ren::eBufType::Upload, Eng::InstanceIndicesBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef skin_transforms_stage_buf = ren_ctx_->LoadBuffer(
+    stage_buffers_.push_back(instance_indices_stage_buf);
+    const Ren::BufferHandle skin_transforms_stage_buf = ren_ctx_->FindOrCreateBuffer(
         "Skin Transforms (Upload)", Ren::eBufType::Upload, Eng::SkinTransformsBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef shape_keys_stage_buf = ren_ctx_->LoadBuffer("Shape Keys (Upload)", Ren::eBufType::Upload,
-                                                            Eng::ShapeKeysBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef cells_stage_buf =
-        ren_ctx_->LoadBuffer("Cells (Upload)", Ren::eBufType::Upload, Eng::CellsBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef rt_cells_stage_buf = ren_ctx_->LoadBuffer("RT Cells (Upload)", Ren::eBufType::Upload,
-                                                          Eng::CellsBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef items_stage_buf =
-        ren_ctx_->LoadBuffer("Items (Upload)", Ren::eBufType::Upload, Eng::ItemsBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef rt_items_stage_buf = ren_ctx_->LoadBuffer("RT Items (Upload)", Ren::eBufType::Upload,
-                                                          Eng::ItemsBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef lights_stage_buf = ren_ctx_->LoadBuffer("Lights (Upload)", Ren::eBufType::Upload,
-                                                        Eng::LightsBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef decals_stage_buf = ren_ctx_->LoadBuffer("Decals (Upload)", Ren::eBufType::Upload,
-                                                        Eng::DecalsBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef rt_geo_instances_stage_buf = ren_ctx_->LoadBuffer(
+    stage_buffers_.push_back(skin_transforms_stage_buf);
+    const Ren::BufferHandle shape_keys_stage_buf = ren_ctx_->FindOrCreateBuffer(
+        "Shape Keys (Upload)", Ren::eBufType::Upload, Eng::ShapeKeysBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(shape_keys_stage_buf);
+    const Ren::BufferHandle cells_stage_buf = ren_ctx_->FindOrCreateBuffer(
+        "Cells (Upload)", Ren::eBufType::Upload, Eng::CellsBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(cells_stage_buf);
+    const Ren::BufferHandle rt_cells_stage_buf = ren_ctx_->FindOrCreateBuffer(
+        "RT Cells (Upload)", Ren::eBufType::Upload, Eng::CellsBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(rt_cells_stage_buf);
+    const Ren::BufferHandle items_stage_buf = ren_ctx_->FindOrCreateBuffer(
+        "Items (Upload)", Ren::eBufType::Upload, Eng::ItemsBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(items_stage_buf);
+    const Ren::BufferHandle rt_items_stage_buf = ren_ctx_->FindOrCreateBuffer(
+        "RT Items (Upload)", Ren::eBufType::Upload, Eng::ItemsBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(rt_items_stage_buf);
+    const Ren::BufferHandle lights_stage_buf = ren_ctx_->FindOrCreateBuffer(
+        "Lights (Upload)", Ren::eBufType::Upload, Eng::LightsBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(lights_stage_buf);
+    const Ren::BufferHandle decals_stage_buf = ren_ctx_->FindOrCreateBuffer(
+        "Decals (Upload)", Ren::eBufType::Upload, Eng::DecalsBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(decals_stage_buf);
+    const Ren::BufferHandle rt_geo_instances_stage_buf = ren_ctx_->FindOrCreateBuffer(
         "RT Geo Instances (Upload)", Ren::eBufType::Upload, Eng::RTGeoInstancesBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef rt_sh_geo_instances_stage_buf =
-        ren_ctx_->LoadBuffer("RT Shadow Geo Instances (Upload)", Ren::eBufType::Upload,
-                             Eng::RTGeoInstancesBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef rt_vol_geo_instances_stage_buf =
-        ren_ctx_->LoadBuffer("RT Volume Geo Instances (Upload)", Ren::eBufType::Upload,
-                             Eng::RTGeoInstancesBufChunkSize * Ren::MaxFramesInFlight);
-    Ren::BufRef rt_obj_instances_stage_buf, rt_sh_obj_instances_stage_buf, rt_vol_obj_instances_stage_buf,
+    stage_buffers_.push_back(rt_geo_instances_stage_buf);
+    const Ren::BufferHandle rt_sh_geo_instances_stage_buf =
+        ren_ctx_->FindOrCreateBuffer("RT Shadow Geo Instances (Upload)", Ren::eBufType::Upload,
+                                     Eng::RTGeoInstancesBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(rt_sh_geo_instances_stage_buf);
+    const Ren::BufferHandle rt_vol_geo_instances_stage_buf =
+        ren_ctx_->FindOrCreateBuffer("RT Volume Geo Instances (Upload)", Ren::eBufType::Upload,
+                                     Eng::RTGeoInstancesBufChunkSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(rt_vol_geo_instances_stage_buf);
+
+    Ren::BufferHandle rt_obj_instances_stage_buf, rt_sh_obj_instances_stage_buf, rt_vol_obj_instances_stage_buf,
         rt_tlas_nodes_stage_buf, rt_sh_tlas_nodes_stage_buf, rt_vol_tlas_nodes_stage_buf;
     if (ren_ctx_->capabilities.hwrt) {
-        rt_obj_instances_stage_buf = ren_ctx_->LoadBuffer("RT Obj Instances (Upload)", Ren::eBufType::Upload,
-                                                          Eng::HWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
+        rt_obj_instances_stage_buf =
+            ren_ctx_->FindOrCreateBuffer("RT Obj Instances (Upload)", Ren::eBufType::Upload,
+                                         Eng::HWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
         rt_sh_obj_instances_stage_buf =
-            ren_ctx_->LoadBuffer("RT Shadow Obj Instances (Upload)", Ren::eBufType::Upload,
-                                 Eng::HWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
+            ren_ctx_->FindOrCreateBuffer("RT Shadow Obj Instances (Upload)", Ren::eBufType::Upload,
+                                         Eng::HWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
         rt_vol_obj_instances_stage_buf =
-            ren_ctx_->LoadBuffer("RT Volume Obj Instances (Upload)", Ren::eBufType::Upload,
-                                 Eng::HWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
+            ren_ctx_->FindOrCreateBuffer("RT Volume Obj Instances (Upload)", Ren::eBufType::Upload,
+                                         Eng::HWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
     } else if (ren_ctx_->capabilities.swrt) {
-        rt_obj_instances_stage_buf = ren_ctx_->LoadBuffer("RT Obj Instances (Upload)", Ren::eBufType::Upload,
-                                                          Eng::SWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
+        rt_obj_instances_stage_buf =
+            ren_ctx_->FindOrCreateBuffer("RT Obj Instances (Upload)", Ren::eBufType::Upload,
+                                         Eng::SWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
         rt_sh_obj_instances_stage_buf =
-            ren_ctx_->LoadBuffer("RT Shadow Obj Instances (Upload)", Ren::eBufType::Upload,
-                                 Eng::SWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
+            ren_ctx_->FindOrCreateBuffer("RT Shadow Obj Instances (Upload)", Ren::eBufType::Upload,
+                                         Eng::SWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
         rt_vol_obj_instances_stage_buf =
-            ren_ctx_->LoadBuffer("RT Volume Obj Instances (Upload)", Ren::eBufType::Upload,
-                                 Eng::SWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
-        rt_tlas_nodes_stage_buf = ren_ctx_->LoadBuffer("SWRT TLAS Nodes (Upload)", Ren::eBufType::Upload,
-                                                       Eng::SWRTTLASNodesBufChunkSize * Ren::MaxFramesInFlight);
-        rt_sh_tlas_nodes_stage_buf = ren_ctx_->LoadBuffer("SWRT Shadow TLAS Nodes (Upload)", Ren::eBufType::Upload,
-                                                          Eng::SWRTTLASNodesBufChunkSize * Ren::MaxFramesInFlight);
-        rt_vol_tlas_nodes_stage_buf = ren_ctx_->LoadBuffer("SWRT Volume TLAS Nodes (Upload)", Ren::eBufType::Upload,
-                                                           Eng::SWRTTLASNodesBufChunkSize * Ren::MaxFramesInFlight);
+            ren_ctx_->FindOrCreateBuffer("RT Volume Obj Instances (Upload)", Ren::eBufType::Upload,
+                                         Eng::SWRTObjInstancesBufChunkSize * Ren::MaxFramesInFlight);
+        rt_tlas_nodes_stage_buf = ren_ctx_->FindOrCreateBuffer("SWRT TLAS Nodes (Upload)", Ren::eBufType::Upload,
+                                                               Eng::SWRTTLASNodesBufChunkSize * Ren::MaxFramesInFlight);
+        rt_sh_tlas_nodes_stage_buf =
+            ren_ctx_->FindOrCreateBuffer("SWRT Shadow TLAS Nodes (Upload)", Ren::eBufType::Upload,
+                                         Eng::SWRTTLASNodesBufChunkSize * Ren::MaxFramesInFlight);
+        rt_vol_tlas_nodes_stage_buf =
+            ren_ctx_->FindOrCreateBuffer("SWRT Volume TLAS Nodes (Upload)", Ren::eBufType::Upload,
+                                         Eng::SWRTTLASNodesBufChunkSize * Ren::MaxFramesInFlight);
     }
 
-    Ren::BufRef shared_data_stage_buf = ren_ctx_->LoadBuffer("Shared Data (Upload)", Ren::eBufType::Upload,
-                                                             Eng::SharedDataBlockSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(rt_obj_instances_stage_buf);
+    stage_buffers_.push_back(rt_sh_obj_instances_stage_buf);
+    stage_buffers_.push_back(rt_vol_obj_instances_stage_buf);
+    stage_buffers_.push_back(rt_tlas_nodes_stage_buf);
+    stage_buffers_.push_back(rt_sh_tlas_nodes_stage_buf);
+    stage_buffers_.push_back(rt_vol_tlas_nodes_stage_buf);
+
+    const Ren::BufferHandle shared_data_stage_buf = ren_ctx_->FindOrCreateBuffer(
+        "Shared Data (Upload)", Ren::eBufType::Upload, Eng::SharedDataBlockSize * Ren::MaxFramesInFlight);
+    stage_buffers_.push_back(shared_data_stage_buf);
 
     //
     // Initialize draw lists
@@ -203,7 +228,13 @@ BaseState::BaseState(Viewer *viewer) : viewer_(viewer) {
     }
 }
 
-BaseState::~BaseState() = default;
+BaseState::~BaseState() {
+    for (const Ren::BufferHandle b : stage_buffers_) {
+        if (b) {
+            ren_ctx_->ReleaseBuffer(b);
+        }
+    }
+}
 
 void BaseState::Enter() {
     using namespace BaseStateInternal;
@@ -440,7 +471,7 @@ void BaseState::Enter() {
 
         const int res = scene_data.probe_storage.res(), capacity = scene_data.probe_storage.capacity();
         const bool result =
-            scene_data.probe_storage.Resize(ren_ctx_->api_ctx(), ren_ctx_->default_mem_allocs(),
+            scene_data.probe_storage.Resize(ren_ctx_->api(), ren_ctx_->default_mem_allocs(),
                                             Ren::eFormat::RGBA8888, res, capacity, ren_ctx_->log());
         assert(result);
 
@@ -1358,92 +1389,92 @@ void BaseState::InitRenderer_PT() {
         s.use_hwrt = !viewer_->app_params.nohwrt;
         s.validation_level = viewer_->app_params.validation_level;
 #if defined(REN_VK_BACKEND)
-        Ren::ApiContext *api_ctx = ren_ctx_->api_ctx();
-        s.vk_device.instance = api_ctx->instance;
-        s.vk_device.physical_device = api_ctx->physical_device;
-        s.vk_device.device = api_ctx->device;
-        s.vk_device.pipeline_cache = api_ctx->pipeline_cache;
+        const Ren::ApiContext &api = ren_ctx_->api();
+        s.vk_device.instance = api.instance;
+        s.vk_device.physical_device = api.physical_device;
+        s.vk_device.device = api.device;
+        s.vk_device.pipeline_cache = api.pipeline_cache;
         s.vk_functions = {
-            api_ctx->vkGetInstanceProcAddr,
-            api_ctx->vkGetDeviceProcAddr,
-            api_ctx->vkGetPhysicalDeviceProperties,
-            api_ctx->vkGetPhysicalDeviceMemoryProperties,
-            (Ray::PFN_vkGetPhysicalDeviceFormatProperties)api_ctx->vkGetPhysicalDeviceFormatProperties,
-            (Ray::PFN_vkGetPhysicalDeviceImageFormatProperties)api_ctx->vkGetPhysicalDeviceImageFormatProperties,
-            api_ctx->vkGetPhysicalDeviceFeatures,
-            api_ctx->vkGetPhysicalDeviceQueueFamilyProperties,
-            (Ray::PFN_vkEnumerateDeviceExtensionProperties)api_ctx->vkEnumerateDeviceExtensionProperties,
-            api_ctx->vkGetDeviceQueue,
-            (Ray::PFN_vkCreateCommandPool)api_ctx->vkCreateCommandPool,
-            api_ctx->vkDestroyCommandPool,
-            (Ray::PFN_vkAllocateCommandBuffers)api_ctx->vkAllocateCommandBuffers,
-            api_ctx->vkFreeCommandBuffers,
-            (Ray::PFN_vkCreateFence)api_ctx->vkCreateFence,
-            (Ray::PFN_vkResetFences)api_ctx->vkResetFences,
-            api_ctx->vkDestroyFence,
-            (Ray::PFN_vkGetFenceStatus)api_ctx->vkGetFenceStatus,
-            (Ray::PFN_vkWaitForFences)api_ctx->vkWaitForFences,
-            (Ray::PFN_vkCreateSemaphore)api_ctx->vkCreateSemaphore,
-            api_ctx->vkDestroySemaphore,
-            (Ray::PFN_vkCreateQueryPool)api_ctx->vkCreateQueryPool,
-            api_ctx->vkDestroyQueryPool,
-            (Ray::PFN_vkGetQueryPoolResults)api_ctx->vkGetQueryPoolResults,
-            (Ray::PFN_vkCreateShaderModule)api_ctx->vkCreateShaderModule,
-            api_ctx->vkDestroyShaderModule,
-            (Ray::PFN_vkCreateDescriptorSetLayout)api_ctx->vkCreateDescriptorSetLayout,
-            api_ctx->vkDestroyDescriptorSetLayout,
-            (Ray::PFN_vkCreatePipelineLayout)api_ctx->vkCreatePipelineLayout,
-            api_ctx->vkDestroyPipelineLayout,
-            (Ray::PFN_vkCreateGraphicsPipelines)api_ctx->vkCreateGraphicsPipelines,
-            (Ray::PFN_vkCreateComputePipelines)api_ctx->vkCreateComputePipelines,
-            api_ctx->vkDestroyPipeline,
-            (Ray::PFN_vkAllocateMemory)api_ctx->vkAllocateMemory,
-            api_ctx->vkFreeMemory,
-            (Ray::PFN_vkCreateBuffer)api_ctx->vkCreateBuffer,
-            api_ctx->vkDestroyBuffer,
-            (Ray::PFN_vkBindBufferMemory)api_ctx->vkBindBufferMemory,
-            api_ctx->vkGetBufferMemoryRequirements,
-            (Ray::PFN_vkCreateBufferView)api_ctx->vkCreateBufferView,
-            api_ctx->vkDestroyBufferView,
-            (Ray::PFN_vkMapMemory)api_ctx->vkMapMemory,
-            api_ctx->vkUnmapMemory,
-            (Ray::PFN_vkBeginCommandBuffer)api_ctx->vkBeginCommandBuffer,
-            (Ray::PFN_vkEndCommandBuffer)api_ctx->vkEndCommandBuffer,
-            (Ray::PFN_vkResetCommandBuffer)api_ctx->vkResetCommandBuffer,
-            (Ray::PFN_vkQueueSubmit)api_ctx->vkQueueSubmit,
-            (Ray::PFN_vkQueueWaitIdle)api_ctx->vkQueueWaitIdle,
-            (Ray::PFN_vkCreateImage)api_ctx->vkCreateImage,
-            api_ctx->vkDestroyImage,
-            api_ctx->vkGetImageMemoryRequirements,
-            (Ray::PFN_vkBindImageMemory)api_ctx->vkBindImageMemory,
-            (Ray::PFN_vkCreateImageView)api_ctx->vkCreateImageView,
-            api_ctx->vkDestroyImageView,
-            (Ray::PFN_vkCreateSampler)api_ctx->vkCreateSampler,
-            api_ctx->vkDestroySampler,
-            (Ray::PFN_vkCreateDescriptorPool)api_ctx->vkCreateDescriptorPool,
-            api_ctx->vkDestroyDescriptorPool,
-            (Ray::PFN_vkResetDescriptorPool)api_ctx->vkResetDescriptorPool,
-            (Ray::PFN_vkAllocateDescriptorSets)api_ctx->vkAllocateDescriptorSets,
-            (Ray::PFN_vkFreeDescriptorSets)api_ctx->vkFreeDescriptorSets,
-            api_ctx->vkUpdateDescriptorSets,
-            api_ctx->vkCmdPipelineBarrier,
-            (Ray::PFN_vkCmdBindPipeline)api_ctx->vkCmdBindPipeline,
-            (Ray::PFN_vkCmdBindDescriptorSets)api_ctx->vkCmdBindDescriptorSets,
-            api_ctx->vkCmdBindVertexBuffers,
-            (Ray::PFN_vkCmdBindIndexBuffer)api_ctx->vkCmdBindIndexBuffer,
-            (Ray::PFN_vkCmdCopyBufferToImage)api_ctx->vkCmdCopyBufferToImage,
-            (Ray::PFN_vkCmdCopyImageToBuffer)api_ctx->vkCmdCopyImageToBuffer,
-            api_ctx->vkCmdCopyBuffer,
-            api_ctx->vkCmdFillBuffer,
-            api_ctx->vkCmdUpdateBuffer,
-            api_ctx->vkCmdPushConstants,
-            (Ray::PFN_vkCmdBlitImage)api_ctx->vkCmdBlitImage,
-            (Ray::PFN_vkCmdClearColorImage)api_ctx->vkCmdClearColorImage,
-            (Ray::PFN_vkCmdCopyImage)api_ctx->vkCmdCopyImage,
-            api_ctx->vkCmdDispatch,
-            api_ctx->vkCmdDispatchIndirect,
-            api_ctx->vkCmdResetQueryPool,
-            (Ray::PFN_vkCmdWriteTimestamp)api_ctx->vkCmdWriteTimestamp};
+            api.vkGetInstanceProcAddr,
+            api.vkGetDeviceProcAddr,
+            api.vkGetPhysicalDeviceProperties,
+            api.vkGetPhysicalDeviceMemoryProperties,
+            (Ray::PFN_vkGetPhysicalDeviceFormatProperties)api.vkGetPhysicalDeviceFormatProperties,
+            (Ray::PFN_vkGetPhysicalDeviceImageFormatProperties)api.vkGetPhysicalDeviceImageFormatProperties,
+            api.vkGetPhysicalDeviceFeatures,
+            api.vkGetPhysicalDeviceQueueFamilyProperties,
+            (Ray::PFN_vkEnumerateDeviceExtensionProperties)api.vkEnumerateDeviceExtensionProperties,
+            api.vkGetDeviceQueue,
+            (Ray::PFN_vkCreateCommandPool)api.vkCreateCommandPool,
+            api.vkDestroyCommandPool,
+            (Ray::PFN_vkAllocateCommandBuffers)api.vkAllocateCommandBuffers,
+            api.vkFreeCommandBuffers,
+            (Ray::PFN_vkCreateFence)api.vkCreateFence,
+            (Ray::PFN_vkResetFences)api.vkResetFences,
+            api.vkDestroyFence,
+            (Ray::PFN_vkGetFenceStatus)api.vkGetFenceStatus,
+            (Ray::PFN_vkWaitForFences)api.vkWaitForFences,
+            (Ray::PFN_vkCreateSemaphore)api.vkCreateSemaphore,
+            api.vkDestroySemaphore,
+            (Ray::PFN_vkCreateQueryPool)api.vkCreateQueryPool,
+            api.vkDestroyQueryPool,
+            (Ray::PFN_vkGetQueryPoolResults)api.vkGetQueryPoolResults,
+            (Ray::PFN_vkCreateShaderModule)api.vkCreateShaderModule,
+            api.vkDestroyShaderModule,
+            (Ray::PFN_vkCreateDescriptorSetLayout)api.vkCreateDescriptorSetLayout,
+            api.vkDestroyDescriptorSetLayout,
+            (Ray::PFN_vkCreatePipelineLayout)api.vkCreatePipelineLayout,
+            api.vkDestroyPipelineLayout,
+            (Ray::PFN_vkCreateGraphicsPipelines)api.vkCreateGraphicsPipelines,
+            (Ray::PFN_vkCreateComputePipelines)api.vkCreateComputePipelines,
+            api.vkDestroyPipeline,
+            (Ray::PFN_vkAllocateMemory)api.vkAllocateMemory,
+            api.vkFreeMemory,
+            (Ray::PFN_vkCreateBuffer)api.vkCreateBuffer,
+            api.vkDestroyBuffer,
+            (Ray::PFN_vkBindBufferMemory)api.vkBindBufferMemory,
+            api.vkGetBufferMemoryRequirements,
+            (Ray::PFN_vkCreateBufferView)api.vkCreateBufferView,
+            api.vkDestroyBufferView,
+            (Ray::PFN_vkMapMemory)api.vkMapMemory,
+            api.vkUnmapMemory,
+            (Ray::PFN_vkBeginCommandBuffer)api.vkBeginCommandBuffer,
+            (Ray::PFN_vkEndCommandBuffer)api.vkEndCommandBuffer,
+            (Ray::PFN_vkResetCommandBuffer)api.vkResetCommandBuffer,
+            (Ray::PFN_vkQueueSubmit)api.vkQueueSubmit,
+            (Ray::PFN_vkQueueWaitIdle)api.vkQueueWaitIdle,
+            (Ray::PFN_vkCreateImage)api.vkCreateImage,
+            api.vkDestroyImage,
+            api.vkGetImageMemoryRequirements,
+            (Ray::PFN_vkBindImageMemory)api.vkBindImageMemory,
+            (Ray::PFN_vkCreateImageView)api.vkCreateImageView,
+            api.vkDestroyImageView,
+            (Ray::PFN_vkCreateSampler)api.vkCreateSampler,
+            api.vkDestroySampler,
+            (Ray::PFN_vkCreateDescriptorPool)api.vkCreateDescriptorPool,
+            api.vkDestroyDescriptorPool,
+            (Ray::PFN_vkResetDescriptorPool)api.vkResetDescriptorPool,
+            (Ray::PFN_vkAllocateDescriptorSets)api.vkAllocateDescriptorSets,
+            (Ray::PFN_vkFreeDescriptorSets)api.vkFreeDescriptorSets,
+            api.vkUpdateDescriptorSets,
+            api.vkCmdPipelineBarrier,
+            (Ray::PFN_vkCmdBindPipeline)api.vkCmdBindPipeline,
+            (Ray::PFN_vkCmdBindDescriptorSets)api.vkCmdBindDescriptorSets,
+            api.vkCmdBindVertexBuffers,
+            (Ray::PFN_vkCmdBindIndexBuffer)api.vkCmdBindIndexBuffer,
+            (Ray::PFN_vkCmdCopyBufferToImage)api.vkCmdCopyBufferToImage,
+            (Ray::PFN_vkCmdCopyImageToBuffer)api.vkCmdCopyImageToBuffer,
+            api.vkCmdCopyBuffer,
+            api.vkCmdFillBuffer,
+            api.vkCmdUpdateBuffer,
+            api.vkCmdPushConstants,
+            (Ray::PFN_vkCmdBlitImage)api.vkCmdBlitImage,
+            (Ray::PFN_vkCmdClearColorImage)api.vkCmdClearColorImage,
+            (Ray::PFN_vkCmdCopyImage)api.vkCmdCopyImage,
+            api.vkCmdDispatch,
+            api.vkCmdDispatchIndirect,
+            api.vkCmdResetQueryPool,
+            (Ray::PFN_vkCmdWriteTimestamp)api.vkCmdWriteTimestamp};
 #endif
         using namespace std::placeholders;
         auto parallel_for =
@@ -2136,20 +2167,22 @@ void BaseState::ReloadSceneResources() {
 }
 
 int BaseState::WriteAndValidateCaptureResult(const int frame) {
-    Ren::BufRef stage_buf =
-        ren_ctx_->LoadBuffer("Temp readback buf", Ren::eBufType::Readback, 4 * viewer_->width * viewer_->height);
+    const Ren::BufferHandle readback_buf = ren_ctx_->FindOrCreateBuffer("Temp readback buf", Ren::eBufType::Readback,
+                                                                        4 * viewer_->width * viewer_->height);
 
     { // Download result
         Ren::CommandBuffer cmd_buf = ren_ctx_->BegTempSingleTimeCommands();
-        capture_result_->CopyTextureData(*stage_buf, cmd_buf, 0, 4 * viewer_->width * viewer_->height);
+
+        const auto &[buf_main, buf_cold] = ren_ctx_->buffers().Get(readback_buf);
+        capture_result_->CopyTextureData(buf_main, buf_cold, cmd_buf, 0, 4 * viewer_->width * viewer_->height);
         ren_ctx_->InsertReadbackMemoryBarrier(cmd_buf);
         ren_ctx_->EndTempSingleTimeCommands(cmd_buf);
     }
 
-    const uint8_t *img_data = stage_buf->Map();
+    const uint8_t *img_data = ren_ctx_->MapBuffer(readback_buf);
     SCOPE_EXIT({
-        stage_buf->Unmap();
-        stage_buf->FreeImmediate();
+        ren_ctx_->UnmapBuffer(readback_buf);
+        ren_ctx_->ReleaseBuffer(readback_buf, true /* immediately */);
     })
 
     const std::string index_prefix = (frame != -1) ? "_" + std::to_string(frame) : "";

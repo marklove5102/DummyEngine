@@ -249,7 +249,8 @@ void LoadingState::InitPipelines(const Sys::JsArrayP &js_pipelines, const int st
         }
         if (js_pi_type.val == "compute") {
             int subgroup_size = -1;
-            if (const size_t subgroup_size_ndx = js_pipeline.IndexOf("subgroup_size"); subgroup_size_ndx < js_pipeline.Size()) {
+            if (const size_t subgroup_size_ndx = js_pipeline.IndexOf("subgroup_size");
+                subgroup_size_ndx < js_pipeline.Size()) {
                 subgroup_size = int(js_pipeline[subgroup_size_ndx].second.as_num().val);
             }
             const std::string shader_name = js_pi_shaders.at(0).as_str().val.c_str();
@@ -266,20 +267,21 @@ void LoadingState::InitPipelines(const Sys::JsArrayP &js_pipelines, const int st
                 rast_state = Eng::ParseRastState(js_rast_state);
             }
 
-            Ren::ProgramRef prog =
+            const Ren::ProgramHandle prog =
                 sh_loader_->LoadProgram(js_pi_shaders.at(0).as_str().val, js_pi_shaders.at(1).as_str().val);
 
             Ren::SmallVector<Ren::VtxAttribDesc, 4> attribs;
-            if (const size_t vertex_input_ndx = js_pipeline.IndexOf("vertex_input"); vertex_input_ndx < js_pipeline.Size()) {
+            if (const size_t vertex_input_ndx = js_pipeline.IndexOf("vertex_input");
+                vertex_input_ndx < js_pipeline.Size()) {
                 const Sys::JsArrayP &js_vertex_input = js_pipeline[vertex_input_ndx].second.as_arr();
                 for (const Sys::JsElementP &el : js_vertex_input.elements) {
                     const Sys::JsObjectP &js_attrib = el.as_obj();
 
                     Ren::VtxAttribDesc &desc = attribs.emplace_back();
                     if (int(js_attrib.at("buf").as_num().val) == 0) {
-                        desc.buf = scene_manager_->scene_data().persistent_data.vertex_buf1;
+                        desc.buf = scene_manager_->scene_data().persistent_data->vertex_buf1;
                     } else if (int(js_attrib.at("buf").as_num().val) == 1) {
-                        desc.buf = scene_manager_->scene_data().persistent_data.vertex_buf2;
+                        desc.buf = scene_manager_->scene_data().persistent_data->vertex_buf2;
                     }
                     desc.loc = uint8_t(js_attrib.at("loc").as_num().val);
                     desc.size = uint8_t(js_attrib.at("size").as_num().val);
@@ -289,12 +291,13 @@ void LoadingState::InitPipelines(const Sys::JsArrayP &js_pipelines, const int st
                 }
             }
 
-            Ren::VertexInputRef vtx_input =
-                sh_loader_->LoadVertexInput(attribs, scene_manager_->scene_data().persistent_data.indices_buf);
+            const Ren::VertexInputHandle vtx_input =
+                sh_loader_->LoadVertexInput(attribs, scene_manager_->scene_data().persistent_data->indices_buf);
 
             Ren::RenderTargetInfo depth_rt;
             Ren::SmallVector<Ren::RenderTargetInfo, 4> color_rts;
-            if (const size_t render_pass_ndx = js_pipeline.IndexOf("render_pass"); render_pass_ndx < js_pipeline.Size()) {
+            if (const size_t render_pass_ndx = js_pipeline.IndexOf("render_pass");
+                render_pass_ndx < js_pipeline.Size()) {
                 const Sys::JsObjectP &js_render_pass = js_pipeline[render_pass_ndx].second.as_obj();
                 if (const size_t depth_ndx = js_render_pass.IndexOf("depth"); depth_ndx < js_render_pass.Size()) {
                     const Sys::JsObjectP &js_rt_info = js_render_pass[depth_ndx].second.as_obj();
@@ -311,7 +314,7 @@ void LoadingState::InitPipelines(const Sys::JsArrayP &js_pipelines, const int st
                 }
             }
 
-            Ren::RenderPassRef render_pass = sh_loader_->LoadRenderPass(depth_rt, color_rts);
+            const Ren::RenderPassHandle render_pass = sh_loader_->LoadRenderPass(depth_rt, color_rts);
 
 #if defined(REN_VK_BACKEND)
             futures_.push_back(threads_->Enqueue([rast_state, prog, vtx_input, render_pass, this]() {

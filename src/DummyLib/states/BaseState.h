@@ -83,6 +83,8 @@ class BaseState : public Eng::ViewerState {
 
     Eng::FrameInfo fr_info_;
 
+    std::vector<Ren::BufferHandle> stage_buffers_;
+
     Ren::Camera temp_probe_cam_;
     // FrameBuf temp_probe_buf_;
     Eng::DrawList temp_probe_lists_[6];

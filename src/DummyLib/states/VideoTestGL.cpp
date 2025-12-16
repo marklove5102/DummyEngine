@@ -32,7 +32,7 @@ void GSVideoTest::InitVideoTextures() {
 
             for (int j = 0; j < TextureSyncWindow; j++) {
                 snprintf(name_buf, sizeof(name_buf), "__video_Y_texture_%i_%i__", tx, j);
-                y_tex_[tx][j] = ren_ctx_->textures2D().Add(name_buf, ren_ctx_->api_ctx(), params,
+                y_tex_[tx][j] = ren_ctx_->textures2D().Add(name_buf, ren_ctx_->api(), params,
                                                            ren_ctx_->default_mem_allocs(), log_);
             }
         }
@@ -47,7 +47,7 @@ void GSVideoTest::InitVideoTextures() {
 
             for (int j = 0; j < TextureSyncWindow; j++) {
                 snprintf(name_buf, sizeof(name_buf), "__video_UV_texture_%i_%i__", tx, j);
-                uv_tex_[tx][j] = ren_ctx_->textures2D().Add(name_buf, ren_ctx_->api_ctx(), params,
+                uv_tex_[tx][j] = ren_ctx_->textures2D().Add(name_buf, ren_ctx_->api(), params,
                                                             ren_ctx_->default_mem_allocs(), log_);
             }
         }
@@ -76,8 +76,8 @@ void GSVideoTest::InitVideoTextures() {
         { // init PBOs
             const uint32_t y_buf_size = TextureSyncWindow * vp.w() * vp.h(),
                            uv_buf_size = TextureSyncWindow * 2 * (vp.w() / 2) * (vp.h() / 2);
-            y_sbuf_[tx] = Ren::Buffer{"Y Upload Buf", ren_ctx_->api_ctx(), Ren::eBufType::Upload, y_buf_size};
-            uv_sbuf_[tx] = Ren::Buffer{"UV Upload Buf", ren_ctx_->api_ctx(), Ren::eBufType::Upload, uv_buf_size};
+            y_sbuf_[tx] = Ren::Buffer{"Y Upload Buf", ren_ctx_->api(), Ren::eBufType::Upload, y_buf_size};
+            uv_sbuf_[tx] = Ren::Buffer{"UV Upload Buf", ren_ctx_->api(), Ren::eBufType::Upload, uv_buf_size};
             if (ren_ctx_->capabilities.persistent_buf_mapping) {
                 y_sbuf_[tx].Map(true /* persistent */);
                 uv_sbuf_[tx].Map(true /* persistent */);

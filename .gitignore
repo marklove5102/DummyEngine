@@ -12,7 +12,6 @@ DummyAppGL*
 DummyAppVK*
 spirv_compiler.*
 libDummyApp*.so
-ModlAppGL.exe
 DummyApp.apk
 test.txt
 test.mesh

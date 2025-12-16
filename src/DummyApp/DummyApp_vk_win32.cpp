@@ -55,18 +55,6 @@ uint32_t ScancodeToHID(const uint32_t scancode) {
     }
     return uint32_t(ScancodeToHID_table[scancode]);
 }
-
-class AuxGfxThread : public Sys::ThreadWorker {
-    HDC device_ctx_;
-    HGLRC gl_ctx_;
-
-  public:
-    AuxGfxThread(HDC device_ctx, HGLRC gl_ctx) : device_ctx_(device_ctx), gl_ctx_(gl_ctx) {
-        AddTask([this]() { __itt_thread_set_name("AuxGfxThread"); });
-    }
-
-    ~AuxGfxThread() override {}
-};
 } // namespace
 
 namespace Ren {
@@ -84,7 +72,7 @@ DummyApp::DummyApp() { g_app = this; }
 DummyApp::~DummyApp() {}
 
 LRESULT CALLBACK WindowProc(const HWND hwnd, const UINT uMsg, const WPARAM wParam, const LPARAM lParam) {
-    static float last_p1_pos[2] = {0, 0}, last_p2_pos[2] = {0, 0};
+    static float last_p1_pos[2] = {0, 0};//, last_p2_pos[2] = {0, 0};
 
     switch (uMsg) {
     case WM_CLOSE: {
