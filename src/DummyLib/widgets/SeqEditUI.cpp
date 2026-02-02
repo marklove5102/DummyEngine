@@ -9,8 +9,8 @@ namespace SeqEditUIInternal {
 
 SeqEditUI::SeqEditUI(Ren::Context &ctx, const Gui::BitmapFont &font, const Gui::Vec2f &pos, const Gui::Vec2f &size,
                      const Gui::BaseElement *parent)
-    : Gui::BaseElement(pos, size, parent), parent_(parent), font_(font),
-      timeline_{ctx, font, Gui::Vec2f{}, Gui::Vec2f{}, this}, canvas_{ctx, font, Gui::Vec2f{}, Gui::Vec2f{}, this} {
+    : Gui::BaseElement(pos, size, parent), font_(font), timeline_{ctx, font, Gui::Vec2f{}, Gui::Vec2f{}, this},
+      canvas_{ctx, font, Gui::Vec2f{}, Gui::Vec2f{}, this} {
     SeqEditUI::Resize();
 
     timeline_.time_changed_signal.Connect<SeqCanvasUI, &SeqCanvasUI::OnCurTimeChange>(&canvas_);

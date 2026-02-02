@@ -17,9 +17,9 @@ class SeqCanvasUI : public Gui::BaseElement {
 
     Gui::Vec2i selected_index_ = Gui::Vec2i{-1};
     enum eDragFlags { DragBeg = (1u << 0u), DragEnd = (1u << 1u) };
-    uint32_t selected_drag_flags_ = 0;
+    // uint32_t selected_drag_flags_ = 0;
     Gui::Vec2f selected_pos_;
-    float selected_time_beg_ = 0, selected_time_end_ = 0;
+    // float selected_time_beg_ = 0, selected_time_end_ = 0;
 
     float GetTimeFromPoint(float px);
     float GetPointFromTime(float t);

@@ -22,7 +22,7 @@ class DialogEditUI : public Gui::BaseElement {
     Eng::ScriptedDialog *dialog_ = nullptr;
 
     int selected_element_ = -1;
-    uint64_t selected_timestamp_ = 0;
+    // uint64_t selected_timestamp_ = 0;
 
     void DrawLineLocal(Gui::Renderer *r, const Gui::Vec2f &p0, const Gui::Vec2f &p1, const Gui::Vec2f &width) const;
     void DrawCurveLocal(Gui::Renderer *r, const Gui::Vec2f &p0, const Gui::Vec2f &p1, const Gui::Vec2f &p2,

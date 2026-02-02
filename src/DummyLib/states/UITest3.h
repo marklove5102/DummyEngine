@@ -24,7 +24,7 @@ class FontStorage;
 class SceneManager;
 class PagedReader;
 
-class UITest3 : public BaseState {
+class UITest3 final : public BaseState {
     uint64_t last_frame_time_ = 0;
     double cur_fps_ = 0.0;
 

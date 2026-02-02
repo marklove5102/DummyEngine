@@ -222,7 +222,7 @@ void PlayTest::UpdateAnim(const uint64_t dt_us) {
                               Ren::Vec3f{0, 1, 0}, cam_ctrl_->view_fov, Ren::Vec2f{0.0f}, 1, cam_ctrl_->min_exposure,
                               cam_ctrl_->max_exposure);
 
-    const Eng::SceneData &scene = scene_manager_->scene_data();
+    // const Eng::SceneData &scene = scene_manager_->scene_data();
 
     seq_cap_ui_->Clear();
     if (test_seq_) {
@@ -347,8 +347,8 @@ bool PlayTest::HandleInput(const Eng::input_event_t &evt, const std::vector<bool
         }
     } break;
     case Eng::eInputEvent::P1Move: {
-        const Gui::Vec2f p = Gui::MapPointToScreen(Gui::Vec2i{int(evt.point[0]), int(evt.point[1])},
-                                                   Gui::Vec2i{ren_ctx_->w(), ren_ctx_->h()});
+        //const Gui::Vec2f p = Gui::MapPointToScreen(Gui::Vec2i{int(evt.point[0]), int(evt.point[1])},
+        //                                           Gui::Vec2i{ren_ctx_->w(), ren_ctx_->h()});
         if (dial_edit_mode_ == 0) {
             // seq_edit_ui_->Hover(p);
         } else if (dial_edit_mode_ == 1) {

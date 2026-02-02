@@ -35,7 +35,7 @@ void DialogEditUI::Draw(Gui::Renderer *r) {
         const Gui::Vec2f elem_size = 2 * ElementSizePx / Gui::Vec2f{size_px()};
         const Gui::Vec2f spacing = 2 * ElementSpacingPx / Gui::Vec2f{size_px()};
 
-        const Ren::ImageRegionRef &line_tex = line_img_.tex();
+        // const Ren::ImageRegionRef &line_tex = line_img_.tex();
 
         const Gui::Vec2f line_width = Gui::Vec2f{1, aspect()} * 4 / Gui::Vec2f{size_px()};
 

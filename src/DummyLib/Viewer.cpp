@@ -311,7 +311,6 @@ bool Viewer::HConvTEIToDict(Eng::assets_context_t &ctx, const char *in_file, con
         Sys::JsObject &js_body = js_text.at("body").as_obj();
         Sys::JsArray &js_entries = js_body.at("entry").as_arr();
 
-        int index = 0;
         for (Sys::JsElement &js_entry_el : js_entries.elements) {
             Sys::JsObject &js_entry = js_entry_el.as_obj();
             if (!js_entry.Has("sense")) {
@@ -429,8 +428,6 @@ bool Viewer::HConvTEIToDict(Eng::assets_context_t &ctx, const char *in_file, con
                     }
                 }
             }
-
-            index++;
         }
     }
 

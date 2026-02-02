@@ -111,7 +111,7 @@ bool WordPuzzleUI::Load(const Sys::JsObject &js_puzzle) {
     }
 
     { // parse options
-        int word_index = 0, option_index = 0, hint_index = 0;
+        [[maybe_unused]] int word_index = 0, option_index = 0, hint_index = 0;
 
         int char_pos = 0;
         while (text_data_[char_pos]) {
@@ -267,7 +267,6 @@ void WordPuzzleUI::Draw(Gui::Renderer *r) {
                 rect_t &rect = split_rects_.emplace_back();
                 rect.dims[0] = Gui::Vec2f{draw_offset[0], draw_offset[1] - 0.125f * font_height};
 
-                int expanded_option = -1;
                 const Gui::Vec2f new_draw_offset =
                     DrawTextBuffer(r, std::string_view(&text_data_[sd.pos], sd.len), draw_offset, options_rects_,
                                    sd.option_start, hint_rects_, sd.hint_start);
@@ -601,7 +600,7 @@ Gui::Vec2f WordPuzzleUI::DrawTextBuffer(Gui::Renderer *r, std::string_view text_
                 draw = true;
 
                 const int option_index = option_start + option_count;
-                const OptionData &opt = text_options_[option_index];
+                [[maybe_unused]] const OptionData &opt = text_options_[option_index];
 
                 // null terminate
                 portion_buf[portion_buf_len] = '\0';
@@ -630,7 +629,7 @@ Gui::Vec2f WordPuzzleUI::DrawTextBuffer(Gui::Renderer *r, std::string_view text_
                 draw = true;
 
                 const int hint_index = hint_start + hint_count;
-                const HintData &hint = text_hints_[hint_index];
+                [[maybe_unused]] const HintData &hint = text_hints_[hint_index];
 
                 // null terminate
                 portion_buf[portion_buf_len] = '\0';

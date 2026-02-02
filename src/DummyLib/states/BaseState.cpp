@@ -1167,7 +1167,7 @@ void BaseState::DrawUI(Gui::Renderer *r, Gui::BaseElement *root) {
 
     OPTICK_EVENT();
 
-    const float font_height = font_->height(root);
+    // const float font_height = font_->height(root);
 
     if (!use_pt_ && !use_lm_) {
         const int back_list = (front_list_ + 1) % 2;
@@ -1584,7 +1584,7 @@ void BaseState::InitScene_PT() {
     // Add default material
     Ray::principled_mat_desc_t default_mat_desc;
     default_mat_desc.base_color[0] = default_mat_desc.base_color[1] = default_mat_desc.base_color[2] = 0.5f;
-    Ray::MaterialHandle default_mat = ray_scene_->AddMaterial(default_mat_desc);
+    [[maybe_unused]] const Ray::MaterialHandle default_mat = ray_scene_->AddMaterial(default_mat_desc);
 
     std::map<std::string, Ray::MeshHandle> loaded_meshes;
     std::map<std::string, Ray::MaterialHandle> loaded_materials;
@@ -1787,7 +1787,7 @@ void BaseState::InitScene_PT() {
                         spot_light_desc.diffuse_visibility = (ls.flags & Eng::eLightFlags::AffectDiffuse);
                         spot_light_desc.specular_visibility = (ls.flags & Eng::eLightFlags::AffectSpecular);
                         spot_light_desc.refraction_visibility = (ls.flags & Eng::eLightFlags::AffectRefraction);
-                        const Ray::LightHandle new_light = ray_scene_->AddLight(spot_light_desc);
+                        [[maybe_unused]] const Ray::LightHandle new_light = ray_scene_->AddLight(spot_light_desc);
                     } else {
                         Ray::sphere_light_desc_t sphere_light_desc;
                         memcpy(sphere_light_desc.color, ValuePtr(0.25f * ls.power * ls.col / ls.area),
@@ -1797,7 +1797,7 @@ void BaseState::InitScene_PT() {
                         sphere_light_desc.diffuse_visibility = (ls.flags & Eng::eLightFlags::AffectDiffuse);
                         sphere_light_desc.specular_visibility = (ls.flags & Eng::eLightFlags::AffectSpecular);
                         sphere_light_desc.refraction_visibility = (ls.flags & Eng::eLightFlags::AffectRefraction);
-                        const Ray::LightHandle new_light = ray_scene_->AddLight(sphere_light_desc);
+                        [[maybe_unused]] const Ray::LightHandle new_light = ray_scene_->AddLight(sphere_light_desc);
                     }
                 } else if (ls.type == Eng::eLightType::Rect) {
                     Ray::rect_light_desc_t rect_light_desc;
@@ -1811,7 +1811,7 @@ void BaseState::InitScene_PT() {
                     rect_light_desc.diffuse_visibility = (ls.flags & Eng::eLightFlags::AffectDiffuse);
                     rect_light_desc.specular_visibility = (ls.flags & Eng::eLightFlags::AffectSpecular);
                     rect_light_desc.refraction_visibility = (ls.flags & Eng::eLightFlags::AffectRefraction);
-                    const Ray::LightHandle new_light =
+                    [[maybe_unused]] const Ray::LightHandle new_light =
                         ray_scene_->AddLight(rect_light_desc, ValuePtr(tr.world_from_object));
                 } else if (ls.type == Eng::eLightType::Disk) {
                     Ray::disk_light_desc_t disk_light_desc;
@@ -1822,7 +1822,7 @@ void BaseState::InitScene_PT() {
                     disk_light_desc.diffuse_visibility = (ls.flags & Eng::eLightFlags::AffectDiffuse);
                     disk_light_desc.specular_visibility = (ls.flags & Eng::eLightFlags::AffectSpecular);
                     disk_light_desc.refraction_visibility = (ls.flags & Eng::eLightFlags::AffectRefraction);
-                    const Ray::LightHandle new_light =
+                    [[maybe_unused]] const Ray::LightHandle new_light =
                         ray_scene_->AddLight(disk_light_desc, ValuePtr(tr.world_from_object));
                 } else if (ls.type == Eng::eLightType::Line) {
                     Ray::line_light_desc_t line_light_desc;
@@ -1832,7 +1832,7 @@ void BaseState::InitScene_PT() {
                     line_light_desc.diffuse_visibility = (ls.flags & Eng::eLightFlags::AffectDiffuse);
                     line_light_desc.specular_visibility = (ls.flags & Eng::eLightFlags::AffectSpecular);
                     line_light_desc.refraction_visibility = (ls.flags & Eng::eLightFlags::AffectRefraction);
-                    const Ray::LightHandle new_light =
+                    [[maybe_unused]] const Ray::LightHandle new_light =
                         ray_scene_->AddLight(line_light_desc, ValuePtr(tr.world_from_object));
                 }
             }

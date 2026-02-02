@@ -27,14 +27,14 @@ class SceneManager;
 class SeqEditUI;
 class WordPuzzleUI;
 
-class PlayTest : public BaseState {
-    uint64_t last_frame_time_ = 0;
-    double cur_fps_ = 0.0;
+class PlayTest final : public BaseState {
+    // uint64_t last_frame_time_ = 0;
+    // double cur_fps_ = 0.0;
 
     uint64_t click_time_ms_ = 0;
 
     const Gui::BitmapFont *dialog_font_ = {};
-    float test_time_counter_s = 0;
+    // float test_time_counter_s = 0;
 
     bool is_playing_ = false;
     float play_started_time_s_ = 0;

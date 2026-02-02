@@ -369,7 +369,7 @@ bool PhyTest::HandleInput(const Eng::input_event_t &evt, const std::vector<bool>
 }
 
 void PhyTest::UpdateAnim(const uint64_t dt_us) {
-    const float delta_time_s = dt_us * 0.000001f;
+    // const float delta_time_s = dt_us * 0.000001f;
 
     // Update camera
     scene_manager_->SetupView(view_origin_, view_origin_ + Ren::Vec3d(view_dir_), Ren::Vec3f{0, 1, 0}, view_fov_,

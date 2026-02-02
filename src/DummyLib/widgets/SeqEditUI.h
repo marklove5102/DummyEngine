@@ -6,8 +6,7 @@
 #include "TimelineUI.h"
 
 class SeqEditUI : public Gui::BaseElement {
-    const Gui::BaseElement *parent_;
-    const Gui::BitmapFont &font_;
+    [[maybe_unused]] const Gui::BitmapFont &font_;
     TimelineUI timeline_;
     SeqCanvasUI canvas_;
 

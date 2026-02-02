@@ -6,8 +6,8 @@
 namespace SeqCanvasUIInternal {
 const int TrackCount = 8;
 const int ElementCropRegionPx = 12;
-const float ElementMoveStep = 0.1f;
-const float ElementDurationMin = 0.3f;
+// const float ElementMoveStep = 0.1f;
+// const float ElementDurationMin = 0.3f;
 } // namespace SeqCanvasUIInternal
 
 SeqCanvasUI::SeqCanvasUI(Ren::Context &ctx, const Gui::BitmapFont &font, const Gui::Vec2f &pos, const Gui::Vec2f &size,

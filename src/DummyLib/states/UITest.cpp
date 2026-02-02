@@ -21,12 +21,6 @@
 #include "../widgets/WordPuzzleUI.h"
 
 namespace UITestInternal {
-#if defined(__ANDROID__)
-const char SCENE_NAME[] = "assets/scenes/"
-#else
-const char SCENE_NAME[] = "assets_pc/scenes/"
-#endif
-                          "corridor.json";
 } // namespace UITestInternal
 
 UITest::UITest(Viewer *viewer) : BaseState(viewer) {

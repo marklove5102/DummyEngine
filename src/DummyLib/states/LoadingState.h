@@ -50,7 +50,7 @@ class LoadingState : public Eng::ViewerState {
 
     Sys::MultiPoolAllocator<char> alloc_;
     Sys::JsArrayP pipelines_to_init_;
-    int pipeline_index_ = 0;
+    [[maybe_unused]] int pipeline_index_ = 0;
     std::vector<std::future<void>> futures_;
 
     void InitPipelines(const Sys::JsArrayP &js_pipelines, int start, int count);

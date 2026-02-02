@@ -11,7 +11,7 @@ class TimelineUI : public Gui::BaseElement {
 
     int time_scale_index_;
     float time_offset_;
-    float time_cur_, time_step_;
+    [[maybe_unused]] float time_cur_, time_step_;
 
     bool grabbed_, snap_to_grid_;
     bool grabbed_rmb_;

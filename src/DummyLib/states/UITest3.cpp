@@ -37,7 +37,7 @@ const Ren::Vec3f page_corners_pos[] = {
     Ren::Vec3f{-0.369601f, 0.059627f, 0.04203f},
 };
 
-const int page_order_indices[][4] = {{}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, -2, -1}};
+// const int page_order_indices[][4] = {{}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, 2, 3}, {0, 1, -2, -1}};
 } // namespace UITest3Internal
 
 UITest3::UITest3(Viewer *viewer) : BaseState(viewer) {
@@ -117,7 +117,7 @@ void UITest3::Enter() {
 
     InitBookMaterials();
 
-    const Eng::SceneData &scene = scene_manager_->scene_data();
+    // const Eng::SceneData &scene = scene_manager_->scene_data();
 
     /*if (book_index_ != 0xffffffff) {
         SceneObject *book = scene_manager_->GetObject(book_index_);
@@ -319,8 +319,8 @@ bool UITest3::HandleInput(const Eng::input_event_t &evt, const std::vector<bool>
 
     switch (evt.type) {
     case Eng::eInputEvent::P1Down: {
-        const Gui::Vec2f p = Gui::MapPointToScreen(Gui::Vec2i{int(evt.point[0]), int(evt.point[1])},
-                                                   Gui::Vec2i{ren_ctx_->w(), ren_ctx_->h()});
+        //const Gui::Vec2f p = Gui::MapPointToScreen(Gui::Vec2i{int(evt.point[0]), int(evt.point[1])},
+        //                                           Gui::Vec2i{ren_ctx_->w(), ren_ctx_->h()});
         if (book_state_ == eBookState::BkOpened) {
         }
     } break;
@@ -387,8 +387,8 @@ bool UITest3::HandleInput(const Eng::input_event_t &evt, const std::vector<bool>
     case Eng::eInputEvent::P2Up: {
     } break;
     case Eng::eInputEvent::P1Move: {
-        const Gui::Vec2f p = Gui::MapPointToScreen(Gui::Vec2i{int(evt.point[0]), int(evt.point[1])},
-                                                   Gui::Vec2i{ren_ctx_->w(), ren_ctx_->h()});
+        //const Gui::Vec2f p = Gui::MapPointToScreen(Gui::Vec2i{int(evt.point[0]), int(evt.point[1])},
+        //                                           Gui::Vec2i{ren_ctx_->w(), ren_ctx_->h()});
         // paged_reader_->Hover(p);
 
         hit_point_screen_ = {};

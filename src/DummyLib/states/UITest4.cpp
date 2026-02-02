@@ -45,7 +45,7 @@ UITest4::UITest4(Viewer *viewer) : BaseState(viewer) {
     dialog_font_ = viewer->font_storage()->FindFont("book_main_font");
     // dialog_font_->set_scale(1.5f);
 
-    const float font_height = dialog_font_->height(ui_root_);
+    // const float font_height = dialog_font_->height(ui_root_);
 
     cam_ctrl_ = std::make_unique<Eng::FreeCamController>(ren_ctx_->w(), ren_ctx_->h(), 0.3f);
     dial_ctrl_ = std::make_unique<DialogController>();
@@ -394,8 +394,8 @@ bool UITest4::HandleInput(const Eng::input_event_t &evt, const std::vector<bool>
         }
     } break;
     case Eng::eInputEvent::P1Move: {
-        const Gui::Vec2f p = Gui::MapPointToScreen(Gui::Vec2i{int(evt.point[0]), int(evt.point[1])},
-                                                   Gui::Vec2i{ren_ctx_->w(), ren_ctx_->h()});
+        // const Gui::Vec2f p = Gui::MapPointToScreen(Gui::Vec2i{int(evt.point[0]), int(evt.point[1])},
+        //                                            Gui::Vec2i{ren_ctx_->w(), ren_ctx_->h()});
         if (dial_edit_mode_ == 0) {
             // dialog_edit_ui_->Hover(p);
         } else if (dial_edit_mode_ == 1) {
