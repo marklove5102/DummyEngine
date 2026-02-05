@@ -26,7 +26,7 @@ class FontStorage {
         if (!font) {
             auto new_font = std::make_unique<Gui::BitmapFont>(file_name, ctx);
             font = new_font.get();
-            fonts_.push_back(std::make_pair(std::string(name), std::move(new_font)));
+            fonts_.push_back(std::pair{std::string(name), std::move(new_font)});
         }
         return font;
     }

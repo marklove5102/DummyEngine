@@ -25,13 +25,13 @@ class SceneManager;
 class PagedReader;
 
 class UITest3 final : public BaseState {
-    uint64_t last_frame_time_ = 0;
-    double cur_fps_ = 0.0;
+    // uint64_t last_frame_time_ = 0;
+    // double cur_fps_ = 0.0;
 
     uint64_t click_time_ = 0;
 
     const Gui::BitmapFont *book_main_font_ = {}, *book_emph_font_ = {}, *book_caption_font_ = {};
-    float test_time_counter_s = 0;
+    // float test_time_counter_s = 0;
 
     std::unique_ptr<Gui::Image> test_image_;
     std::unique_ptr<Gui::Image9Patch> test_frame_;

@@ -905,7 +905,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -939,7 +940,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -973,7 +975,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -1007,7 +1010,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1015,7 +1019,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1052,7 +1057,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1060,7 +1066,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1097,7 +1104,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1105,7 +1113,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1142,7 +1151,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1150,7 +1160,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1187,7 +1198,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1195,7 +1207,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1232,7 +1245,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1240,7 +1254,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1277,7 +1292,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -1285,7 +1301,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1322,7 +1339,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -1330,7 +1348,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1367,7 +1386,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -1375,7 +1395,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1412,7 +1433,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -1420,7 +1442,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1457,7 +1480,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -1465,7 +1489,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1502,7 +1527,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -1510,7 +1536,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1547,7 +1574,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1555,7 +1583,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -1563,7 +1592,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1600,7 +1630,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1608,7 +1639,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -1616,7 +1648,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1653,7 +1686,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1661,7 +1695,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -1669,7 +1704,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1706,7 +1742,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1714,7 +1751,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -1722,7 +1760,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1759,7 +1798,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1767,7 +1807,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -1775,7 +1816,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1812,7 +1854,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1820,7 +1863,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -1828,7 +1872,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -1865,7 +1910,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -1901,7 +1947,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -1937,7 +1984,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -1973,7 +2021,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -1981,7 +2030,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2020,7 +2070,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2028,7 +2079,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2067,7 +2119,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2075,7 +2128,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2114,7 +2168,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2122,7 +2177,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2161,7 +2217,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2169,7 +2226,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2208,7 +2266,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2216,7 +2275,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2256,7 +2316,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -2300,7 +2361,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -2344,7 +2406,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -2388,7 +2451,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2396,7 +2460,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2443,7 +2508,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2451,7 +2517,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2498,7 +2565,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2506,7 +2574,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2553,7 +2622,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2561,7 +2631,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2608,7 +2679,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2616,7 +2688,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2663,7 +2736,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2671,7 +2745,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2718,7 +2793,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -2726,7 +2802,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2773,7 +2850,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -2781,7 +2859,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2828,7 +2907,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -2836,7 +2916,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2883,7 +2964,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -2891,7 +2973,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -2938,7 +3021,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -2946,7 +3030,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -2954,7 +3039,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3001,7 +3087,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3009,7 +3096,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -3017,7 +3105,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3064,7 +3153,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3072,7 +3162,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -3080,7 +3171,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3127,7 +3219,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3135,7 +3228,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -3143,7 +3237,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3190,7 +3285,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -3198,7 +3294,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3245,7 +3342,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -3253,7 +3351,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3300,7 +3399,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -3308,7 +3408,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3355,7 +3456,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -3363,7 +3465,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3410,7 +3513,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3418,7 +3522,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -3426,7 +3531,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3473,7 +3579,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3481,7 +3588,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -3489,7 +3597,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3536,7 +3645,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3544,7 +3654,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -3552,7 +3663,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3599,7 +3711,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3607,7 +3720,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -3615,7 +3729,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -3662,7 +3777,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3670,7 +3786,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -3714,7 +3831,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3722,7 +3840,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -3766,7 +3885,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3774,7 +3894,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 0,
@@ -3782,7 +3903,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -3829,7 +3951,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3837,7 +3960,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 0,
@@ -3845,7 +3969,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -3892,7 +4017,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3900,7 +4026,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -3944,7 +4071,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -3952,7 +4080,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -3996,7 +4125,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4004,7 +4134,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 0,
@@ -4012,7 +4143,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -4059,7 +4191,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4067,7 +4200,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 0,
@@ -4075,7 +4209,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -4122,7 +4257,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4130,7 +4266,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 0,
@@ -4138,7 +4275,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -4185,7 +4323,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4193,7 +4332,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 0,
@@ -4201,7 +4341,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 4194304
+                "base_offset" : 4194304,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -4243,7 +4384,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4251,7 +4393,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4259,7 +4402,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4267,7 +4411,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -4319,7 +4464,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4327,7 +4473,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4335,7 +4482,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4343,7 +4491,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -4395,7 +4544,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4403,7 +4553,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4411,7 +4562,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4419,7 +4571,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -4471,7 +4624,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4479,7 +4633,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4487,7 +4642,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4495,7 +4651,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -4547,7 +4704,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4555,7 +4713,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4563,7 +4722,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4571,7 +4731,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -4623,7 +4784,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4631,7 +4793,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4639,7 +4802,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4647,7 +4811,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -4699,7 +4864,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4707,7 +4873,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4715,7 +4882,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4723,7 +4891,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -4731,7 +4900,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -4783,7 +4953,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4791,7 +4962,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4799,7 +4971,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4807,7 +4980,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -4815,7 +4989,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -4867,7 +5042,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4875,7 +5051,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4883,7 +5060,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4891,7 +5069,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -4899,7 +5078,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -4951,7 +5131,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -4959,7 +5140,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -4967,7 +5149,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -4975,7 +5158,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -4983,7 +5167,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5042,7 +5227,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5050,7 +5236,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5099,7 +5286,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5107,7 +5295,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5156,7 +5345,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5164,7 +5354,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5213,7 +5404,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5221,7 +5413,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5270,7 +5463,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5278,7 +5472,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5327,7 +5522,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5335,7 +5531,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5384,7 +5581,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5392,7 +5590,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -5400,7 +5599,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5449,7 +5649,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5457,7 +5658,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -5465,7 +5667,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5514,7 +5717,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5522,7 +5726,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -5530,7 +5735,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5579,7 +5785,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -5587,7 +5794,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -5595,7 +5803,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -5638,7 +5847,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5674,7 +5884,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5710,7 +5921,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5746,7 +5958,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5782,7 +5995,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5818,7 +6032,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5854,7 +6069,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5890,7 +6106,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5926,7 +6143,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5962,7 +6180,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -5998,7 +6217,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -6034,7 +6254,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             }
         ],
         "render_pass" : {
@@ -6070,7 +6291,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6078,7 +6300,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6086,7 +6309,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6094,7 +6318,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6130,7 +6355,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6138,7 +6364,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6146,7 +6373,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6154,7 +6382,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6190,7 +6419,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6198,7 +6428,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6206,7 +6437,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6214,7 +6446,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6250,7 +6483,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6258,7 +6492,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6266,7 +6501,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6274,7 +6510,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6310,7 +6547,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6318,7 +6556,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6326,7 +6565,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6334,7 +6574,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6370,7 +6611,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6378,7 +6620,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6386,7 +6629,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6394,7 +6638,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6430,7 +6675,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6438,7 +6684,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6446,7 +6693,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6454,7 +6702,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -6462,7 +6711,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -6498,7 +6748,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6506,7 +6757,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6514,7 +6766,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6522,7 +6775,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -6530,7 +6784,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -6566,7 +6821,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6574,7 +6830,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6582,7 +6839,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6590,7 +6848,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -6598,7 +6857,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -6634,7 +6894,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6642,7 +6903,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6650,7 +6912,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6658,7 +6921,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -6666,7 +6930,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -6709,7 +6974,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6717,7 +6983,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6725,7 +6992,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6733,7 +7001,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6783,7 +7052,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6791,7 +7061,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6799,7 +7070,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6807,7 +7079,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6857,7 +7130,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6865,7 +7139,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6873,7 +7148,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6881,7 +7157,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -6931,7 +7208,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -6939,7 +7217,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -6947,7 +7226,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -6955,7 +7235,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7005,7 +7286,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7013,7 +7295,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7021,7 +7304,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7029,7 +7313,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7079,7 +7364,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7087,7 +7373,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7095,7 +7382,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7103,7 +7391,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7153,7 +7442,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7161,7 +7451,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7169,7 +7460,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7177,7 +7469,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7227,7 +7520,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7235,7 +7529,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7243,7 +7538,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7251,7 +7547,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7301,7 +7598,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7309,7 +7607,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7317,7 +7616,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7325,7 +7625,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7375,7 +7676,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7383,7 +7685,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7391,7 +7694,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7399,7 +7703,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7449,7 +7754,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7457,7 +7763,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7465,7 +7772,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7473,7 +7781,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7523,7 +7832,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7531,7 +7841,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7539,7 +7850,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7547,7 +7859,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7597,7 +7910,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7605,7 +7919,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7613,7 +7928,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7621,7 +7937,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7671,7 +7988,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7679,7 +7997,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7687,7 +8006,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7695,7 +8015,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7745,7 +8066,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7753,7 +8075,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7761,7 +8084,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7769,7 +8093,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7819,7 +8144,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7827,7 +8153,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7835,7 +8162,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7843,7 +8171,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7893,7 +8222,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7901,7 +8231,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7909,7 +8240,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7917,7 +8249,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -7967,7 +8300,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -7975,7 +8309,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -7983,7 +8318,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -7991,7 +8327,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -8041,7 +8378,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8049,7 +8387,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8057,7 +8396,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8065,7 +8405,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -8115,7 +8456,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8123,7 +8465,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8131,7 +8474,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8139,7 +8483,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -8189,7 +8534,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8197,7 +8543,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8205,7 +8552,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8213,7 +8561,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -8263,7 +8612,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8271,7 +8621,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8279,7 +8630,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8287,7 +8639,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -8337,7 +8690,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8345,7 +8699,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8353,7 +8708,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8361,7 +8717,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -8411,7 +8768,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8419,7 +8777,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8427,7 +8786,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8435,7 +8795,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             }
         ],
         "render_pass" : {
@@ -8485,7 +8846,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8493,7 +8855,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8501,7 +8864,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8509,7 +8873,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -8517,7 +8882,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -8567,7 +8933,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8575,7 +8942,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8583,7 +8951,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8591,7 +8960,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -8599,7 +8969,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -8649,7 +9020,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8657,7 +9029,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8665,7 +9038,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8673,7 +9047,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -8681,7 +9056,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -8731,7 +9107,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8739,7 +9116,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8747,7 +9125,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8755,7 +9134,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -8763,7 +9143,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -8813,7 +9194,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8821,7 +9203,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8829,7 +9212,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8837,7 +9221,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -8845,7 +9230,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -8895,7 +9281,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8903,7 +9290,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8911,7 +9299,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -8919,7 +9308,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -8927,7 +9317,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -8977,7 +9368,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -8985,7 +9377,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -8993,7 +9386,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9001,7 +9395,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9009,7 +9404,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9059,7 +9455,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9067,7 +9464,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9075,7 +9473,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9083,7 +9482,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9091,7 +9491,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9141,7 +9542,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9149,7 +9551,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9157,7 +9560,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9165,7 +9569,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9173,7 +9578,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9223,7 +9629,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9231,7 +9638,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9239,7 +9647,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9247,7 +9656,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9255,7 +9665,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9305,7 +9716,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9313,7 +9725,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9321,7 +9734,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9329,7 +9743,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9337,7 +9752,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9387,7 +9803,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9395,7 +9812,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9403,7 +9821,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9411,7 +9830,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9419,7 +9839,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9469,7 +9890,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9477,7 +9899,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9485,7 +9908,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9493,7 +9917,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9501,7 +9926,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9551,7 +9977,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9559,7 +9986,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9567,7 +9995,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9575,7 +10004,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9583,7 +10013,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9633,7 +10064,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9641,7 +10073,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9649,7 +10082,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9657,7 +10091,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9665,7 +10100,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {
@@ -9715,7 +10151,8 @@
                 "size" : 3,
                 "type" : "Float32",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 0,
@@ -9723,7 +10160,8 @@
                 "size" : 2,
                 "type" : "Float16",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             },
             {
                 "buf" : 1,
@@ -9731,7 +10169,8 @@
                 "size" : 4,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 0
+                "base_offset" : 0,
+                "rel_offset" : 0
             },
             {
                 "buf" : 1,
@@ -9739,7 +10178,8 @@
                 "size" : 2,
                 "type" : "Int16_snorm",
                 "stride" : 16,
-                "offset" : 8
+                "base_offset" : 0,
+                "rel_offset" : 8
             },
             {
                 "buf" : 1,
@@ -9747,7 +10187,8 @@
                 "size" : 1,
                 "type" : "Uint32",
                 "stride" : 16,
-                "offset" : 12
+                "base_offset" : 0,
+                "rel_offset" : 12
             }
         ],
         "render_pass" : {

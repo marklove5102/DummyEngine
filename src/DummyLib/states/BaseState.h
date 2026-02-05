@@ -115,9 +115,9 @@ class BaseState : public Eng::ViewerState {
 
     bool streaming_finished_ = false;
     enum class eCaptureState { None, UpdateGICache, Warmup, Started } capture_state_ = eCaptureState::None;
-    Ren::ImgRef capture_result_;
+    Ren::ImageHandle capture_result_;
 
-    Ren::ImgRef pt_result_;
+    Ren::ImageHandle pt_result_;
 
     struct cam_frame_t {
         Ren::Vec3d pos, dir;
@@ -143,7 +143,7 @@ class BaseState : public Eng::ViewerState {
     Ray::TextureHandle LoadTexture_PT(std::string_view name, bool is_srgb, bool is_YCoCg, bool use_mips);
     void SetupView_PT(const Ren::Vec3f &origin, const Ren::Vec3f &fwd, const Ren::Vec3f &up, float fov);
     void Clear_PT();
-    void Draw_PT(const Ren::ImgRef &target);
+    void Draw_PT(Ren::ImageHandle target);
 
     void ReloadSceneResources();
 

@@ -9,6 +9,7 @@
 #include <Gui/BitmapFont.h>
 #include <Gui/Renderer.h>
 #include <Ren/Context.h>
+#include <Ren/ResizableBuffer.h>
 #include <Sys/AssetFile.h>
 #include <Sys/Json.h>
 #include <Sys/MemBuf.h>
@@ -52,7 +53,7 @@ void LoadingState::Enter() {
     assert(load_status == Ren::eImgLoadStatus::CreatedFromData);
 
     { // Init loading program
-        blit_loading_prog_ = sh_loader_->LoadProgram("blit_loading.vert.glsl", "blit_loading.frag.glsl");
+        blit_loading_prog_ = sh_loader_->FindOrCreateProgram("blit_loading.vert.glsl", "blit_loading.frag.glsl");
     }
 
     { // Load pipelines description
@@ -153,13 +154,13 @@ void LoadingState::Draw() {
         loading_text += ".";
     }
 
-    if (!prim_draw_->LazyInit(*ren_ctx_)) {
+    if (!prim_draw_->LazyInit(*sh_loader_)) {
         ren_ctx_->log()->Error("Failed to initialize primitive drawing!");
     }
 
     { // Draw abstract loading art
         const Ren::RenderTarget render_targets[] = {
-            {ren_ctx_->backbuffer_ref(), Ren::eLoadOp::DontCare, Ren::eStoreOp::Store}};
+            {ren_ctx_->backbuffer_img(), Ren::eLoadOp::DontCare, Ren::eStoreOp::Store}};
 
         Loading::Params uniform_params;
         uniform_params.transform = Ren::Vec4f{0.0f, 0.0f, ren_ctx_->w(), ren_ctx_->h()};
@@ -173,8 +174,9 @@ void LoadingState::Draw() {
         rast_state.viewport[2] = ren_ctx_->w();
         rast_state.viewport[3] = ren_ctx_->h();
 
-        prim_draw_->DrawPrim(Eng::PrimDraw::ePrim::Quad, blit_loading_prog_, {}, render_targets, rast_state,
-                             curr_rast_state_, {}, &uniform_params, sizeof(Loading::Params), 0);
+        prim_draw_->DrawPrim(ren_ctx_->current_cmd_buf(), Eng::PrimDraw::ePrim::Quad, blit_loading_prog_, {},
+                             render_targets, rast_state, curr_rast_state_, {}, &uniform_params, sizeof(Loading::Params),
+                             0);
     }
 
     font_->DrawText(ui_renderer_, loading_text, Gui::Vec2f{-0.5f * text_width, 0.0f}, Gui::ColorWhite, 1.0f, ui_root_);
@@ -255,10 +257,11 @@ void LoadingState::InitPipelines(const Sys::JsArrayP &js_pipelines, const int st
             }
             const std::string shader_name = js_pi_shaders.at(0).as_str().val.c_str();
 #if defined(REN_VK_BACKEND)
-            futures_.push_back(threads_->Enqueue(
-                [shader_name, subgroup_size, this]() { sh_loader_->LoadPipeline(shader_name, subgroup_size); }));
+            futures_.push_back(threads_->Enqueue([shader_name, subgroup_size, this]() {
+                sh_loader_->FindOrCreatePipeline(shader_name, subgroup_size);
+            }));
 #else
-            sh_loader_->LoadPipeline(shader_name, subgroup_size);
+            sh_loader_->FindOrCreatePipeline(shader_name, subgroup_size);
 #endif
         } else if (js_pi_type.val == "graphics") {
             Ren::RastState rast_state;
@@ -268,7 +271,7 @@ void LoadingState::InitPipelines(const Sys::JsArrayP &js_pipelines, const int st
             }
 
             const Ren::ProgramHandle prog =
-                sh_loader_->LoadProgram(js_pi_shaders.at(0).as_str().val, js_pi_shaders.at(1).as_str().val);
+                sh_loader_->FindOrCreateProgram(js_pi_shaders.at(0).as_str().val, js_pi_shaders.at(1).as_str().val);
 
             Ren::SmallVector<Ren::VtxAttribDesc, 4> attribs;
             if (const size_t vertex_input_ndx = js_pipeline.IndexOf("vertex_input");
@@ -278,21 +281,17 @@ void LoadingState::InitPipelines(const Sys::JsArrayP &js_pipelines, const int st
                     const Sys::JsObjectP &js_attrib = el.as_obj();
 
                     Ren::VtxAttribDesc &desc = attribs.emplace_back();
-                    if (int(js_attrib.at("buf").as_num().val) == 0) {
-                        desc.buf = scene_manager_->scene_data().persistent_data->vertex_buf1;
-                    } else if (int(js_attrib.at("buf").as_num().val) == 1) {
-                        desc.buf = scene_manager_->scene_data().persistent_data->vertex_buf2;
-                    }
+                    desc.buf = int(js_attrib.at("buf").as_num().val);
                     desc.loc = uint8_t(js_attrib.at("loc").as_num().val);
                     desc.size = uint8_t(js_attrib.at("size").as_num().val);
                     desc.type = Ren::Type(js_attrib.at("type").as_str().val);
                     desc.stride = uint8_t(js_attrib.at("stride").as_num().val);
-                    desc.offset = uint32_t(js_attrib.at("offset").as_num().val);
+                    desc.base_offset = uint32_t(js_attrib.at("base_offset").as_num().val);
+                    desc.rel_offset = uint32_t(js_attrib.at("rel_offset").as_num().val);
                 }
             }
 
-            const Ren::VertexInputHandle vtx_input =
-                sh_loader_->LoadVertexInput(attribs, scene_manager_->scene_data().persistent_data->indices_buf);
+            const Ren::VertexInputHandle vtx_input = sh_loader_->FindOrCreateVertexInput(attribs);
 
             Ren::RenderTargetInfo depth_rt;
             Ren::SmallVector<Ren::RenderTargetInfo, 4> color_rts;
@@ -314,14 +313,14 @@ void LoadingState::InitPipelines(const Sys::JsArrayP &js_pipelines, const int st
                 }
             }
 
-            const Ren::RenderPassHandle render_pass = sh_loader_->LoadRenderPass(depth_rt, color_rts);
+            const Ren::RenderPassHandle render_pass = sh_loader_->FindOrCreateRenderPass(depth_rt, color_rts);
 
 #if defined(REN_VK_BACKEND)
             futures_.push_back(threads_->Enqueue([rast_state, prog, vtx_input, render_pass, this]() {
-                sh_loader_->LoadPipeline(rast_state, prog, vtx_input, render_pass, 0);
+                sh_loader_->FindOrCreatePipeline(rast_state, prog, vtx_input, render_pass, 0);
             }));
 #else
-            sh_loader_->LoadPipeline(rast_state, prog, vtx_input, render_pass, 0);
+            sh_loader_->FindOrCreatePipeline(rast_state, prog, vtx_input, render_pass, 0);
 #endif
         }
     }
