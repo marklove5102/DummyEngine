@@ -36,7 +36,7 @@
 #include <Sys/Time_.h>
 
 #if defined(REN_VK_BACKEND)
-#include <Ren/VKCtx.h>
+#include <Ren/Vk/VKCtx.h>
 #endif
 
 #include "../Viewer.h"
@@ -1496,6 +1496,8 @@ void BaseState::InitScene_PT() {
     Eng::SceneData &scene_data = scene_manager_->scene_data();
     const Eng::render_settings_t &settings = renderer_->settings;
 
+    const Ren::StoragesRef &storages = ren_ctx_->storages();
+
     const auto *transforms = (Eng::Transform *)scene_data.comp_store[Eng::CompTransform]->SequentialData();
     auto *drawables = (Eng::Drawable *)scene_data.comp_store[Eng::CompDrawable]->SequentialData();
     auto *acc_structs = (Eng::AccStructure *)scene_data.comp_store[Eng::CompAccStructure]->SequentialData();
@@ -1597,17 +1599,18 @@ void BaseState::InitScene_PT() {
     std::map<std::string, Ray::MaterialHandle> loaded_materials;
     std::map<std::string, Ray::TextureHandle> loaded_textures;
 
-    auto load_texture = [&](const Ren::Image &tex, const bool is_srgb = false, const bool is_YCoCg = false,
+    auto load_texture = [&](const Ren::ImageHandle handle, const bool is_srgb = false, const bool is_YCoCg = false,
                             const bool use_mips = true) {
-        if (tex.name() == "default_basecolor.dds" || tex.name() == "default_normalmap.dds" ||
-            tex.name() == "default_roughness.dds" || tex.name() == "default_metallic.dds" ||
-            tex.name() == "default_opacity.dds") {
+        const auto &[img_main, img_cold] = ren_ctx_->images().Get(handle);
+        if (img_cold.name == "default_basecolor.dds" || img_cold.name == "default_normalmap.dds" ||
+            img_cold.name == "default_roughness.dds" || img_cold.name == "default_metallic.dds" ||
+            img_cold.name == "default_opacity.dds") {
             return Ray::InvalidTextureHandle;
         }
-        auto tex_it = loaded_textures.find(tex.name().c_str());
+        auto tex_it = loaded_textures.find(img_cold.name.c_str());
         if (tex_it == loaded_textures.end()) {
-            const Ray::TextureHandle new_tex = LoadTexture_PT(tex.name().c_str(), is_srgb, is_YCoCg, use_mips);
-            tex_it = loaded_textures.emplace(tex.name().c_str(), new_tex).first;
+            const Ray::TextureHandle new_tex = LoadTexture_PT(img_cold.name.c_str(), is_srgb, is_YCoCg, use_mips);
+            tex_it = loaded_textures.emplace(img_cold.name.c_str(), new_tex).first;
         }
         return tex_it->second;
     };
@@ -1649,97 +1652,101 @@ void BaseState::InitScene_PT() {
                 for (int j = 0; j < int(groups.size()); ++j) {
                     const Ren::tri_group_t &grp = groups[j];
 
-                    const Ren::Material *front_mat =
-                        (j >= dr.material_override.size()) ? grp.front_mat.get() : dr.material_override[j][0].get();
-                    const char *mat_name = front_mat->name().c_str();
+                    const Ren::MaterialHandle front_mat =
+                        (j >= dr.material_override.size()) ? grp.front_mat : dr.material_override[j][0];
+                    const auto &[front_main, front_cold] = storages.materials.Get(front_mat);
+
+                    const char *mat_name = front_cold.name.c_str();
 
                     std::pair<Ray::MaterialHandle, Ray::MaterialHandle> mat_handles;
 
                     auto mat_it = loaded_materials.find(mat_name);
                     if (mat_it == loaded_materials.end()) {
                         Ray::principled_mat_desc_t mat_desc;
-                        memcpy(mat_desc.base_color, ValuePtr(front_mat->params[0]), 3 * sizeof(float));
-                        mat_desc.base_texture = load_texture(*front_mat->textures[0], true, true);
-                        mat_desc.roughness = front_mat->params[0][3];
-                        mat_desc.roughness_texture = load_texture(*front_mat->textures[2]);
+                        memcpy(mat_desc.base_color, ValuePtr(front_cold.params[0]), 3 * sizeof(float));
+                        mat_desc.base_texture = load_texture(front_main.textures[0], true, true);
+                        mat_desc.roughness = front_cold.params[0][3];
+                        mat_desc.roughness_texture = load_texture(front_main.textures[2]);
                         mat_desc.specular = 0;
                         mat_desc.importance_sample = true;
-                        if (front_mat->params.size() > 1) {
-                            mat_desc.sheen = front_mat->params[1][0];
-                            mat_desc.sheen_tint = front_mat->params[1][1];
-                            mat_desc.specular = front_mat->params[1][2];
-                            mat_desc.specular_tint = front_mat->params[1][3];
+                        if (front_cold.params.size() > 1) {
+                            mat_desc.sheen = front_cold.params[1][0];
+                            mat_desc.sheen_tint = front_cold.params[1][1];
+                            mat_desc.specular = front_cold.params[1][2];
+                            mat_desc.specular_tint = front_cold.params[1][3];
                         }
-                        if (front_mat->params.size() > 2) {
-                            mat_desc.metallic = front_mat->params[2][0];
-                            mat_desc.transmission = front_mat->params[2][1];
-                            mat_desc.clearcoat = front_mat->params[2][2];
-                            mat_desc.clearcoat_roughness = front_mat->params[2][3];
+                        if (front_cold.params.size() > 2) {
+                            mat_desc.metallic = front_cold.params[2][0];
+                            mat_desc.transmission = front_cold.params[2][1];
+                            mat_desc.clearcoat = front_cold.params[2][2];
+                            mat_desc.clearcoat_roughness = front_cold.params[2][3];
                         }
-                        if (front_mat->params.size() > 3) {
-                            mat_desc.alpha = 1 - front_mat->params[3][0];
+                        if (front_cold.params.size() > 3) {
+                            mat_desc.alpha = 1 - front_cold.params[3][0];
                             if (mat_desc.transmission > 0) {
-                                mat_desc.ior = front_mat->params[3][1];
+                                mat_desc.ior = front_cold.params[3][1];
                             } else {
-                                memcpy(mat_desc.emission_color, &front_mat->params[3][1], 3 * sizeof(float));
+                                memcpy(mat_desc.emission_color, &front_cold.params[3][1], 3 * sizeof(float));
                             }
                         }
-                        if (front_mat->textures.size() > 3) {
-                            mat_desc.metallic_texture = load_texture(*front_mat->textures[3]);
+                        if (front_main.textures.size() > 3) {
+                            mat_desc.metallic_texture = load_texture(front_main.textures[3]);
                         }
-                        if (front_mat->textures.size() > 4) {
-                            mat_desc.alpha_texture = load_texture(*front_mat->textures[4]);
+                        if (front_main.textures.size() > 4) {
+                            mat_desc.alpha_texture = load_texture(front_main.textures[4]);
                         }
-                        if (front_mat->textures.size() > 5) {
-                            mat_desc.emission_texture = load_texture(*front_mat->textures[5], true, true);
+                        if (front_main.textures.size() > 5) {
+                            mat_desc.emission_texture = load_texture(front_main.textures[5], true, true);
                         }
-                        mat_desc.normal_map = load_texture(*front_mat->textures[1], false, false, false);
+                        mat_desc.normal_map = load_texture(front_main.textures[1], false, false, false);
 
                         const Ray::MaterialHandle new_mat = ray_scene_->AddMaterial(mat_desc);
                         mat_it = loaded_materials.emplace(mat_name, new_mat).first;
                     }
                     mat_handles = {mat_it->second, mat_it->second};
 
-                    const Ren::Material *back_mat =
-                        (j >= dr.material_override.size()) ? grp.back_mat.get() : dr.material_override[j][1].get();
+                    const Ren::MaterialHandle back_mat =
+                        (j >= dr.material_override.size()) ? grp.back_mat : dr.material_override[j][1];
+                    const auto &[back_main, back_cold] = storages.materials.Get(back_mat);
+
                     if (front_mat != back_mat) {
                         Ray::principled_mat_desc_t mat_desc;
-                        memcpy(mat_desc.base_color, ValuePtr(back_mat->params[0]), 3 * sizeof(float));
-                        mat_desc.base_texture = load_texture(*back_mat->textures[0], true, true);
-                        mat_desc.roughness = back_mat->params[0][3];
-                        mat_desc.roughness_texture = load_texture(*back_mat->textures[2]);
+                        memcpy(mat_desc.base_color, ValuePtr(back_cold.params[0]), 3 * sizeof(float));
+                        mat_desc.base_texture = load_texture(back_main.textures[0], true, true);
+                        mat_desc.roughness = back_cold.params[0][3];
+                        mat_desc.roughness_texture = load_texture(back_main.textures[2]);
                         mat_desc.specular = 0;
                         mat_desc.importance_sample = true;
-                        if (back_mat->params.size() > 1) {
-                            mat_desc.sheen = back_mat->params[1][0];
-                            mat_desc.sheen_tint = back_mat->params[1][1];
-                            mat_desc.specular = back_mat->params[1][2];
-                            mat_desc.specular_tint = back_mat->params[1][3];
+                        if (back_cold.params.size() > 1) {
+                            mat_desc.sheen = back_cold.params[1][0];
+                            mat_desc.sheen_tint = back_cold.params[1][1];
+                            mat_desc.specular = back_cold.params[1][2];
+                            mat_desc.specular_tint = back_cold.params[1][3];
                         }
-                        if (back_mat->params.size() > 2) {
-                            mat_desc.metallic = back_mat->params[2][0];
-                            mat_desc.transmission = back_mat->params[2][1];
-                            mat_desc.clearcoat = back_mat->params[2][2];
-                            mat_desc.clearcoat_roughness = back_mat->params[2][3];
+                        if (back_cold.params.size() > 2) {
+                            mat_desc.metallic = back_cold.params[2][0];
+                            mat_desc.transmission = back_cold.params[2][1];
+                            mat_desc.clearcoat = back_cold.params[2][2];
+                            mat_desc.clearcoat_roughness = back_cold.params[2][3];
                         }
-                        if (back_mat->params.size() > 3) {
-                            mat_desc.alpha = 1 - back_mat->params[3][0];
+                        if (back_cold.params.size() > 3) {
+                            mat_desc.alpha = 1 - back_cold.params[3][0];
                             if (mat_desc.transmission > 0) {
-                                mat_desc.ior = back_mat->params[3][1];
+                                mat_desc.ior = back_cold.params[3][1];
                             } else {
-                                memcpy(mat_desc.emission_color, &front_mat->params[3][1], 3 * sizeof(float));
+                                memcpy(mat_desc.emission_color, &front_cold.params[3][1], 3 * sizeof(float));
                             }
                         }
-                        if (back_mat->textures.size() > 3) {
-                            mat_desc.metallic_texture = load_texture(*back_mat->textures[3]);
+                        if (back_main.textures.size() > 3) {
+                            mat_desc.metallic_texture = load_texture(back_main.textures[3]);
                         }
-                        if (back_mat->textures.size() > 4) {
-                            mat_desc.alpha_texture = load_texture(*back_mat->textures[4]);
+                        if (back_main.textures.size() > 4) {
+                            mat_desc.alpha_texture = load_texture(back_main.textures[4]);
                         }
-                        if (back_mat->textures.size() > 5) {
-                            mat_desc.emission_texture = load_texture(*back_mat->textures[5], true, true);
+                        if (back_main.textures.size() > 5) {
+                            mat_desc.emission_texture = load_texture(back_main.textures[5], true, true);
                         }
-                        mat_desc.normal_map = load_texture(*back_mat->textures[1]);
+                        mat_desc.normal_map = load_texture(back_main.textures[1]);
 
                         mat_handles.second = ray_scene_->AddMaterial(mat_desc);
                     }

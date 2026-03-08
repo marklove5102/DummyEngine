@@ -1,6 +1,6 @@
 #include "UITest3.h"
 
-#include <Ren/GL.h>
+#include <Ren/Gl/GL.h>
 
 #include "../widgets/PagedReader.h"
 

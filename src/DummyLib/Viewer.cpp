@@ -18,7 +18,7 @@
 #include <Sys/ThreadPool.h>
 
 #if defined(REN_VK_BACKEND)
-#include <Ren/VKCtx.h>
+#include <Ren/Vk/VKCtx.h>
 
 #include <optick/optick.h>
 
@@ -26,7 +26,7 @@ namespace Ren {
 extern bool ignore_optick_errors;
 }
 #elif defined(REN_GL_BACKEND)
-#include <Ren/GLCtx.h>
+#include <Ren/Gl/GLCtx.h>
 #endif
 
 #include <Sys/AssetFile.h>

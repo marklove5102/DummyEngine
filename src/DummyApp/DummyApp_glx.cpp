@@ -6,7 +6,7 @@
 __itt_domain *__g_itt_domain = __itt_domain_create("Global"); // NOLINT
 
 #if defined(REN_GL_BACKEND)
-#include <Ren/GL.h>
+#include <Ren/Gl/GL.h>
 #endif
 
 #if !defined(__ANDROID__)
