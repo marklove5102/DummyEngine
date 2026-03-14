@@ -1376,14 +1376,15 @@ void BaseState::InitRenderer_PT() {
     if (!ray_renderer_) {
         { // Release GPU resources
             ren_ctx_->WaitIdle();
-            scene_manager_->ReleaseEnvMap(true /* immediate */);
-            scene_manager_->ReleaseGICache(true /* immediate */);
-            scene_manager_->Release_TLAS(true /* immediate */);
-            scene_manager_->ReleaseLightTree(true /* immediate */);
-            scene_manager_->ReleaseMeshBuffers(true /* immediate */);
-            scene_manager_->ReleaseImages(true /* immediate */);
-            scene_manager_->ReleaseMaterialsBuffer(true /* immediate */);
-            scene_manager_->ReleaseInstanceBuffer(true /* immediate */);
+            scene_manager_->ReleaseEnvMap(true /* immediately */);
+            scene_manager_->ReleaseGICache(true /* immediately */);
+            scene_manager_->ReleaseLightTree(true /* immediately */);
+            scene_manager_->ReleaseMeshBuffers(true /* immediately */);
+            scene_manager_->Release_TLAS(true /* immediately */);
+            scene_manager_->Release_BLASes(true /* immediately */);
+            scene_manager_->ReleaseImages(true /* immediately */);
+            scene_manager_->ReleaseMaterialsBuffer(true /* immediately */);
+            scene_manager_->ReleaseInstanceBuffer(true /* immediately */);
         }
 
         Ray::settings_t s;
