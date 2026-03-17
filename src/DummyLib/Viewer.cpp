@@ -14,7 +14,7 @@
 #include <Eng/widgets/DebugFrameUI.h>
 #include <Ray/Ray.h>
 #include <Ren/Context.h>
-#include <Ren/MVec.h>
+#include <Ren/math/Vec.h>
 #include <Sys/ThreadPool.h>
 
 #if defined(REN_VK_BACKEND)

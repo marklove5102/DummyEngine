@@ -4,8 +4,8 @@
 #include <memory>
 #include <string_view>
 
-#include <Ren/HashMap32.h>
 #include <Ren/Log.h>
+#include <Ren/utils/HashMap32.h>
 
 enum class eGramGrpPos { Noun, Verb, Adjective };
 

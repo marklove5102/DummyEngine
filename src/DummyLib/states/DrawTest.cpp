@@ -55,7 +55,7 @@ Ren::Span<const uint8_t> RayLUTByName(const std::string_view name) {
 }
 } // namespace DrawTestInternal
 
-#include <Ren/Utils.h>
+#include <Ren/utils/Utils.h>
 
 namespace SceneManagerInternal {
 int WriteImage(const uint8_t *out_data, int w, int h, int channels, bool flip_y, bool is_rgbm, const char *name);
@@ -767,7 +767,7 @@ void DrawTest::TestUpdateAnims(const float delta_time_s) {
                 {
                     Mat4f xform;
                     // xform = Rotate(xform, 0.5f * delta_time_s, Vec3f{0, 1, 0});
-                    xform = Translate(xform, delta_time_s * Vec3f{0.1f, 0.0f, 0.0f});
+                    xform = Translate(xform, delta_time_s *Vec3f{0.1f, 0.0f, 0.0f});
 
                     tr->world_from_object_prev = tr->world_from_object;
                     tr->world_from_object = xform * tr->world_from_object;

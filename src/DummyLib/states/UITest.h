@@ -10,10 +10,10 @@
 #include <Gui/BitmapFont.h>
 #include <Ren/Camera.h>
 #include <Ren/Image.h>
-#include <Ren/MVec.h>
 #include <Ren/Mesh.h>
 #include <Ren/Program.h>
 #include <Ren/SW/SW.h>
+#include <Ren/math/Vec.h>
 
 #include "BaseState.h"
 
