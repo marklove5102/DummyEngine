@@ -12,13 +12,14 @@ const int ElementCropRegionPx = 12;
 
 SeqCanvasUI::SeqCanvasUI(Ren::Context &ctx, const Gui::BitmapFont &font, const Gui::Vec2f &pos, const Gui::Vec2f &size,
                          const Gui::BaseElement *parent)
-    : Gui::BaseElement(pos, size, parent), font_(font), back_{ctx,
-                                                              "assets_pc/textures/editor/canvas_back.uncompressed.tga",
-                                                              Gui::Vec2f{1.0f, 1.5f},
-                                                              1,
-                                                              Gui::Vec2f{-1},
-                                                              Gui::Vec2f{2},
-                                                              this},
+    : Gui::BaseElement(pos, size, parent), ctx_(ctx), font_(font),
+      back_{ctx,
+            "assets_pc/textures/editor/canvas_back.uncompressed.tga",
+            Gui::Vec2f{1.0f, 1.5f},
+            1,
+            Gui::Vec2f{-1},
+            Gui::Vec2f{2},
+            this},
       time_cursor_{ctx,
                    "assets_pc/textures/editor/line_pointer.uncompressed.tga",
                    Gui::Vec2f{1.0f, 1.5f},
@@ -111,8 +112,9 @@ void SeqCanvasUI::Draw(Gui::Renderer *r) {
                                Gui::ColorCyan, this);
                 y_text_pos -= font_height;
 
-                if (seq_action->anim_ref) {
-                    font_.DrawText(r, seq_action->anim_ref->name(),
+                if (seq_action->anim) {
+                    const auto &[anim_main, anim_cold] = ctx_.anims().Get(seq_action->anim);
+                    font_.DrawText(r, anim_cold.name,
                                    SnapToPixels(Gui::Vec2f{x_beg + 1.25f * crop_region_width, y_text_pos}),
                                    Gui::ColorWhite, this);
                 }

@@ -1620,18 +1620,18 @@ void BaseState::InitScene_PT() {
         const uint32_t drawable_flags = Eng::CompDrawableBit | Eng::CompTransformBit;
         if ((obj.comp_mask & drawable_flags) == drawable_flags) {
             const Eng::Drawable &dr = drawables[obj.components[Eng::CompDrawable]];
-            const Ren::Mesh *mesh = dr.mesh.get();
-            assert(mesh->type() == Ren::eMeshType::Simple);
-            Ren::Span<const float> attribs = mesh->attribs();
+            const auto &[mesh_main, mesh_cold] = storages.meshes.Get(dr.mesh);
+            assert(mesh_main.type == Ren::eMeshType::Simple);
+            Ren::Span<const float> attribs = mesh_cold.attribs;
             assert((attribs.size() % 13) == 0);
             const int vtx_count = int(attribs.size() / 13);
-            Ren::Span<const uint32_t> indices = mesh->indices();
+            Ren::Span<const uint32_t> indices = mesh_cold.indices;
             const int ndx_count = int(indices.size());
 
             Ray::MeshHandle mesh_handle = Ray::InvalidMeshHandle;
 
             if (dr.material_override.empty()) {
-                auto mesh_it = loaded_meshes.find(mesh->name().c_str());
+                auto mesh_it = loaded_meshes.find(mesh_cold.name.c_str());
                 if (mesh_it != loaded_meshes.end()) {
                     mesh_handle = mesh_it->second;
                 }
@@ -1639,7 +1639,7 @@ void BaseState::InitScene_PT() {
 
             if (mesh_handle == Ray::InvalidMeshHandle) {
                 Ray::mesh_desc_t mesh_desc;
-                mesh_desc.name = mesh->name().c_str();
+                mesh_desc.name = mesh_cold.name.c_str();
                 mesh_desc.prim_type = Ray::ePrimType::TriangleList;
                 mesh_desc.vtx_positions = {{attribs.data(), 13 * vtx_count}, 0, 13};
                 mesh_desc.vtx_normals = {{attribs.data(), 13 * vtx_count}, 3, 13};
@@ -1649,7 +1649,7 @@ void BaseState::InitScene_PT() {
 
                 std::vector<Ray::mat_group_desc_t> mat_groups;
 
-                const Ren::Span<const Ren::tri_group_t> groups = mesh->groups();
+                const Ren::Span<const Ren::tri_group_t> groups = mesh_cold.groups;
                 for (int j = 0; j < int(groups.size()); ++j) {
                     const Ren::tri_group_t &grp = groups[j];
 
@@ -1759,7 +1759,7 @@ void BaseState::InitScene_PT() {
 
                 mesh_handle = ray_scene_->AddMesh(mesh_desc);
                 if (dr.material_override.empty()) {
-                    loaded_meshes.emplace(mesh->name().c_str(), mesh_handle);
+                    loaded_meshes.emplace(mesh_cold.name.c_str(), mesh_handle);
                 }
             }
 

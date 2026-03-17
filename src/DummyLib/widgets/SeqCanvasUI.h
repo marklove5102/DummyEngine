@@ -6,6 +6,7 @@
 #include "TimelineUI.h"
 
 class SeqCanvasUI : public Gui::BaseElement {
+    const Ren::Context &ctx_;
     const Gui::BitmapFont &font_;
 
     Gui::Image9Patch back_, time_cursor_, element_normal_, element_highlighted_;
