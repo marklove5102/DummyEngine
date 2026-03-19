@@ -47,10 +47,8 @@ void LoadingState::Enter() {
     params.w = params.h = 1;
     params.format = Ren::eFormat::RGBA8;
 
-    Ren::eImgLoadStatus load_status;
     dummy_white_ =
-        ren_ctx_->LoadImageRegion("dummy_white", Gui::ColorWhite, params, ren_ctx_->current_cmd_buf(), &load_status);
-    assert(load_status == Ren::eImgLoadStatus::CreatedFromData);
+        ren_ctx_->CreateImageRegion(Ren::String{"dummy_white"}, Gui::ColorWhite, params, ren_ctx_->current_cmd_buf());
 
     { // Init loading program
         blit_loading_prog_ = sh_loader_->FindOrCreateProgram("blit_loading.vert.glsl", "blit_loading.frag.glsl");
@@ -134,10 +132,11 @@ void LoadingState::Draw() {
         ren_ctx_->backend_frame();
 
     { // Solid black background
+        const auto &[reg_main, reg_cold] = ren_ctx_->image_regions().Get(dummy_white_);
         const Gui::Vec2f pos[2] = {Gui::Vec2f{-1.0f, -1.0f}, Gui::Vec2f{1.0f, 1.0f}};
-        const Gui::Vec2f uvs[2] = {Gui::Vec2f{float(dummy_white_->pos(0)), float(dummy_white_->pos(1))},
-                                   Gui::Vec2f{float(dummy_white_->pos(0)), float(dummy_white_->pos(1))}};
-        ui_renderer_->PushImageQuad(Gui::eDrawMode::Passthrough, dummy_white_->pos(2), Gui::ColorBlack, pos, uvs);
+        const Gui::Vec2f uvs[2] = {Gui::Vec2f{float(reg_main.pos[0]), float(reg_main.pos[1])},
+                                   Gui::Vec2f{float(reg_main.pos[0]), float(reg_main.pos[1])}};
+        ui_renderer_->PushImageQuad(Gui::eDrawMode::Passthrough, reg_main.pos[2], Gui::ColorBlack, pos, uvs);
     }
 
     std::string loading_text = "Loading";

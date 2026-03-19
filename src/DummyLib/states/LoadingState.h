@@ -40,7 +40,7 @@ class LoadingState : public Eng::ViewerState {
     Gui::BaseElement *ui_root_ = nullptr;
     const Gui::BitmapFont *font_ = nullptr;
 
-    Ren::ImageRegionRef dummy_white_;
+    Ren::ImageRegionHandle dummy_white_;
 
     Ren::ProgramHandle blit_loading_prog_;
     Ren::RastState curr_rast_state_;

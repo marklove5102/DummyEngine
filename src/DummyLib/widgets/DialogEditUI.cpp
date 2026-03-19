@@ -115,7 +115,7 @@ void DialogEditUI::Resize() { BaseElement::Resize(); }
 
 void DialogEditUI::DrawLineLocal(Gui::Renderer *r, const Gui::Vec2f &_p0, const Gui::Vec2f &_p1,
                                  const Gui::Vec2f &width) const {
-    const Ren::ImageRegionRef &line_tex = line_img_.tex();
+    /*const Ren::ImageRegionRef &line_tex = line_img_.tex();
     const Gui::Vec2f *_uvs = line_img_.uvs_px();
 
     const auto p0 =
@@ -127,12 +127,12 @@ void DialogEditUI::DrawLineLocal(Gui::Renderer *r, const Gui::Vec2f &_p0, const 
     const auto dp = Normalize(Gui::Vec2f{p1 - p0});
 
     r->PushLine(Gui::eDrawMode::Passthrough, line_tex->pos(2), Gui::ColorBlack, p0, p1, dp, dp,
-                Gui::Vec4f{width[0], width[1], 2, 0});
+                Gui::Vec4f{width[0], width[1], 2, 0});*/
 }
 
 void DialogEditUI::DrawCurveLocal(Gui::Renderer *r, const Gui::Vec2f &_p0, const Gui::Vec2f &_p1, const Gui::Vec2f &_p2,
                                   const Gui::Vec2f &_p3, const Gui::Vec2f &width, const uint8_t color[4]) const {
-    const Ren::ImageRegionRef &line_tex = line_img_.tex();
+    /*const Ren::ImageRegionRef &line_tex = line_img_.tex();
     const Gui::Vec2f *_uvs = line_img_.uvs_px();
 
     const auto p0 =
@@ -149,7 +149,7 @@ void DialogEditUI::DrawCurveLocal(Gui::Renderer *r, const Gui::Vec2f &_p0, const
                    dims_[0][1] + 0.5f * (_p3[1] + 1) * dims_[1][1], _uvs[1][0] - 2, _uvs[1][1] - 0.5f};
 
     r->PushCurve(Gui::eDrawMode::Passthrough, line_tex->pos(2), color, p0, p1, p2, p3,
-                 Gui::Vec4f{width[0], width[1], 2, 0});
+                 Gui::Vec4f{width[0], width[1], 2, 0});*/
 }
 
 void DialogEditUI::IterateElements(const IterationCallback &callback) {

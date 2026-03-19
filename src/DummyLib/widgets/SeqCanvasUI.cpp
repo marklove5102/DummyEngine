@@ -85,7 +85,7 @@ void SeqCanvasUI::Draw(Gui::Renderer *r) {
                                            : &element_normal_;
 
                 if (seq_action->sound_wave_tex) {
-                    const Ren::ImageRegionRef &t = seq_action->sound_wave_tex;
+                    /*const Ren::ImageRegionRef &t = seq_action->sound_wave_tex;
 
                     const Ren::ImgParams &p = t->params;
                     const Gui::Vec2f uvs_px[] = {Gui::Vec2f{float(t->pos(0)), float(t->pos(1))},
@@ -100,7 +100,7 @@ void SeqCanvasUI::Draw(Gui::Renderer *r) {
 
                     const Gui::Vec2f pos[2] = {el->dims()[0], el->dims()[0] + el->dims()[1]};
 
-                    r->PushImageQuad(Gui::eDrawMode::Passthrough, tex_layer, Gui::ColorWhite, pos, uvs_px);
+                    r->PushImageQuad(Gui::eDrawMode::Passthrough, tex_layer, Gui::ColorWhite, pos, uvs_px);*/
                 }
 
                 const char *type_name = Eng::ScriptedSequence::ActionTypeNames[int(seq_action->type)];
