@@ -140,6 +140,13 @@ LRESULT CALLBACK WindowProc(const HWND hwnd, const UINT uMsg, const WPARAM wPara
         g_app->AddEvent(Eng::eInputEvent::Resize, 0, float(w), float(h), 0, 0);
         break;
     }
+    case WM_GETMINMAXINFO: {
+        DefWindowProc(hwnd, uMsg, wParam, lParam);
+        MINMAXINFO *pmmi = (MINMAXINFO *)lParam;
+        pmmi->ptMaxTrackSize.x = 10000;
+        pmmi->ptMaxTrackSize.y = 10000;
+        return 0;
+    }
     default: {
         break;
     }
